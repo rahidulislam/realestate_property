@@ -15,3 +15,8 @@ class PropertiesView(TemplateView):
     template_name = "core/properties.html"
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
+    
+class PropertyDetailView(TemplateView):
+    template_name = "core/property_detail.html"
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
