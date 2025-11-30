@@ -36,3 +36,24 @@ class AgentsView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
+
+
+class AgentProfileView(TemplateView):
+    template_name = "core/agent_profile.html"
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+
+class ServicesView(TemplateView):
+    template_name = "core/services.html"
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+
+class ServiceDetailView(TemplateView):
+    template_name = "core/service_detail.html"
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
