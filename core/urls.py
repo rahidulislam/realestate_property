@@ -8,6 +8,11 @@ from .views import (
     AgentProfileView,
     ServicesView,
     ServiceDetailView,
+    BlogView,
+    BlogDetailView,
+    ContactView,
+    PrivacyPolicyView,
+    TermsView,
 )
 
 app_name = "core"
@@ -21,4 +26,9 @@ urlpatterns = [
     path("agents/profile/", AgentProfileView.as_view(), name="agent_profile"),
     path("services/", ServicesView.as_view(), name="services"),
     path("services/details/", ServiceDetailView.as_view(), name="service_detail"),
+    path("blog/", BlogView.as_view(), name="blog"),
+    path("blog/details/", BlogDetailView.as_view(), name="blog_detail"),
+    path("contact/", ContactView.as_view(), name="contact"),
+    path("privacy-policy/", PrivacyPolicyView.as_view(), name="privacy_policy"),
+    path("terms/", TermsView.as_view(), name="terms"),
 ]

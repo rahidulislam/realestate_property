@@ -57,3 +57,38 @@ class ServiceDetailView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
+
+
+class ContactView(TemplateView):
+    template_name = "core/contact.html"
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+
+class PrivacyPolicyView(TemplateView):
+    template_name = "core/privacy_policy.html"
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+
+class TermsView(TemplateView):
+    template_name = "core/terms.html"
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+
+class BlogView(TemplateView):
+    template_name = "core/blog.html"
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+
+class BlogDetailView(TemplateView):
+    template_name = "core/blog_detail.html"
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)

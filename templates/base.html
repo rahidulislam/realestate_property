@@ -10,8 +10,8 @@
     <meta name="keywords" content="" />
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon" />
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="{% static 'img/favicon.png' %}" rel="icon" />
+    <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon" />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
@@ -81,7 +81,7 @@
             <li><a class="{% active 'core:properties' %}" href="{% url 'core:properties' %}">Properties</a></li>
             <li><a class="{% active 'core:services' %}"href="{% url 'core:services' %}">Services</a></li>
             <li><a class="{% active 'core:agents' %}" href="{% url 'core:agents' %}">Agents</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a class="{% active 'core:blog' %}" href="{% url 'core:blog' %}">Blog</a></li>
             <li class="dropdown">
               <a href="#"
                 ><span>More Pages</span>
@@ -91,9 +91,9 @@
                 <li><a href="{% url 'core:property_detail' %}">Property Details</a></li>
                 <li><a href="{% url 'core:service_detail' %}">Service Details</a></li>
                 <li><a href="{% url 'core:agent_profile' %}">Agent Profile</a></li>
-                <li><a href="blog-details.html">Blog Details</a></li>
-                <li><a href="terms.html">Terms</a></li>
-                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="{% url 'core:blog_detail' %}">Blog Details</a></li>
+                <li><a href="{% url 'core:terms' %}">Terms</a></li>
+                <li><a href="{% url 'core:privacy_policy' %}">Privacy</a></li>
                 <li><a href="404.html">404</a></li>
               </ul>
             </li>
@@ -123,7 +123,7 @@
                 <li><a href="#">Dropdown 4</a></li>
               </ul>
             </li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a class="{% active 'core:contact' %}"href="{% url 'core:contact' %}">Contact</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -180,7 +180,7 @@
               <h4>Company</h4>
               <ul>
                 <li>
-                  <a href="#"><i class="bi bi-chevron-right"></i> About</a>
+                  <a href="{% url 'core:about' %}"><i class="bi bi-chevron-right"></i> About</a>
                 </li>
                 <li>
                   <a href="#"><i class="bi bi-chevron-right"></i> Careers</a>
@@ -189,10 +189,10 @@
                   <a href="#"><i class="bi bi-chevron-right"></i> Press</a>
                 </li>
                 <li>
-                  <a href="#"><i class="bi bi-chevron-right"></i> Blog</a>
+                  <a href="{% url 'core:blog' %}"><i class="bi bi-chevron-right"></i> Blog</a>
                 </li>
                 <li>
-                  <a href="#"><i class="bi bi-chevron-right"></i> Contact</a>
+                  <a href="{% url 'core:contact' %}"><i class="bi bi-chevron-right"></i> Contact</a>
                 </li>
               </ul>
             </div>
