@@ -1,0 +1,56 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<main class="main">
+  <section class="section">
+    <div class="container">
+      <div
+        class="row justify-content-center"
+        data-aos="fade-up"
+        data-aos-delay="150"
+      >
+        <div class="col-lg-6">
+          <div class="card p-4">
+            <h2 class="text-center mb-4">Sign in</h2>
+
+            {% if form.errors %}
+            <div class="alert alert-danger">
+              Please correct the error below.
+            </div>
+            {% endif %}
+
+            <form method="post" novalidate>
+              {% csrf_token %} {% if next %}
+              <input type="hidden" name="next" value="{{ next }}" />
+              {% endif %}
+
+              <div class="mb-3">
+                {{ form.username.label_tag }} {{ form.username }} 
+                {% if form.username.errors %}
+                <div class="text-danger small">{{ form.username.errors }}</div>
+                {% endif %}
+              </div>
+
+              <div class="mb-3">
+                {{ form.password.label_tag }} {{ form.password }} 
+                {% if form.password.errors %}
+                <div class="text-danger small">{{ form.password.errors }}</div>
+                {% endif %}
+              </div>
+
+              <div class="col-12 text-center mt-3">
+                <button type="submit" class="btn btn-primary btn-submit">
+                  SIGN IN
+                </button>
+              </div>
+            </form>
+
+            <p class="text-center small mt-3">
+              Don't have an account?
+              <a href="{% url 'user:signup' %}">Sign up</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock content %}
