@@ -92,3 +92,21 @@ class BlogDetailView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
+
+class SellerDashboardView(TemplateView):
+    template_name = "dashboard/seller/seller_dashboard.html"
+    
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+    
+class AgentDashboardView(TemplateView):
+    template_name = "core/agent_dashboard.html"
+    
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+    
+class BuyerDashboardView(TemplateView):
+    template_name = "core/buyer_dashboard.html"
+    
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)

@@ -1,4 +1,5 @@
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django import forms
 
 from .models import CustomUser
 
@@ -6,7 +7,7 @@ from .models import CustomUser
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = CustomUser
-        fields = ("email", "first_name", "last_name")
+        fields = ("email", "first_name", "last_name", "password1", "password2")
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -22,13 +23,26 @@ class CustomUserCreationForm(UserCreationForm):
         first_name = self.cleaned_data.get("first_name", "")
         last_name = self.cleaned_data.get("last_name", "")
 
-        user = CustomUser.objects.create_customer(
+        user = CustomUser.objects.create_buyer(
             email=email,
             password=password,
             first_name=first_name,
             last_name=last_name,
         )
         return user
+
+    def clean_email(self):
+        email = self.cleaned_data["email"]
+        if CustomUser.objects.filter(email=email).exists():
+            raise forms.ValidationError("This email is already in use.")
+        return email
+
+    def clean_password2(self):
+        password1 = self.cleaned_data.get("password1")
+        password2 = self.cleaned_data.get("password2")
+        if password1 and password2 and password1 != password2:
+            raise forms.ValidationError("The two password fields didn't match.")
+        return password2
 
 
 class CustomAuthenticationForm(AuthenticationForm):

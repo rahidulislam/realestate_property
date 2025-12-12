@@ -1,59 +1,177 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
-<main class="main">
-  <section class="section">
-    <div class="container">
-      <div
-        class="row justify-content-center"
-        data-aos="fade-up"
-        data-aos-delay="150"
-      >
-        <div class="col-lg-6">
-          <div class="card p-4">
-            <h2 class="text-center mb-4">Sign up</h2>
+{% extends 'base.html' %}
+{% load static %}
 
-            {% if messages %} {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}" role="alert">
-              {{ message }}
-            </div>
-            {% endfor %} {% endif %}
+{% block content %}
+
+<style>
+  .signup-wrapper {
+    margin-top: 80px; /* navbar থেকে gap */
+    margin-bottom: 80px;
+  }
+
+  .signup-card {
+    border-radius: 16px;
+    padding: 40px;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+
+  .signup-image-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+
+  .signup-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+/*
+  .btn-submit {
+    background-color: #0e6b50;
+    border: none;
+    padding: 10px 28px;
+    font-size: 16px;
+  }
+  .btn-submit:hover {
+    background-color: #0c5a44;
+  }
+*/
+
+/* Default button style */
+.btn-submit,
+.btn-primary {
+    background-color: #0e6b50;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: all 0.25s ease-in-out;
+    color: #fff;
+    font-weight: 500;
+}
+
+/* Hover effect */
+.btn-submit:hover,
+.btn-primary:hover {
+    background-color: #0b5a44; /* Slightly darker green */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(14, 107, 80, 0.25);
+}
+
+/* Active (click) effect */
+.btn-submit:active,
+.btn-primary:active {
+    transform: translateY(0px);
+    box-shadow: 0 3px 8px rgba(14, 107, 80, 0.3);
+}
+
+/* Focus outline (for accessibility) */
+.btn-submit:focus,
+.btn-primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(14, 107, 80, 0.3);
+}
+  /* Global input style matching TheProperty template */
+.form-control {
+    height: 55px;
+    border-radius: 10px;
+    border: 1px solid #d7d7d7;
+    padding: 0 18px;
+    font-size: 15px;
+    transition: all 0.25s ease-in-out;
+    background: #fff;
+}
+
+/* Hover effect */
+.form-control:hover {
+    border-color: #0e6b50;   /* Template green */
+}
+
+/* Focus effect */
+.form-control:focus {
+    border-color: #0e6b50;
+    box-shadow: 0 0 0 3px rgba(14, 107, 80, 0.15);
+    outline: none !important;
+}
+
+/* Textarea styling */
+textarea.form-control {
+    height: auto;
+    padding-top: 12px;
+    min-height: 120px;
+}
+
+
+</style>
+
+<main class="main">
+
+  <section class="signup-wrapper">
+    <div class="container">
+      <div class="row g-5 justify-content-center align-items-center">
+        <!-- Left side: Signup Form -->
+        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="150">
+          <div class="signup-card">
+
+            <h2 class="text-center mb-4" style="color:#0e6b50;">
+              Create Your Account
+            </h2>
+
+            {% if messages %}
+              {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}" role="alert">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
 
             <form method="post" novalidate>
-              {% csrf_token %} {% if form.non_field_errors %}
-              <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+              {% csrf_token %}
+
+              {% if form.non_field_errors %}
+                <div class="alert alert-danger">{{ form.non_field_errors }}</div>
               {% endif %}
 
               <div class="mb-3">
-                {{ form.email.label_tag }} {{ form.email }} {% if form.email.errors %}
+                {{ form.email.label_tag }}
+                {{ form.email }}
+                {% if form.email.errors %}
                 <div class="text-danger small">{{ form.email.errors }}</div>
                 {% endif %}
               </div>
 
               <div class="row">
                 <div class="col-md-6 mb-3">
-                  {{ form.first_name.label_tag }} {{ form.first_name }} {% if form.first_name.errors %}
-                  <div class="text-danger small">
-                    {{ form.first_name.errors }}
-                  </div>
+                  {{ form.first_name.label_tag }}
+                  {{ form.first_name }}
+                  {% if form.first_name.errors %}
+                  <div class="text-danger small">{{ form.first_name.errors }}</div>
                   {% endif %}
                 </div>
 
                 <div class="col-md-6 mb-3">
-                  {{ form.last_name.label_tag }} {{ form.last_name }} {% if form.last_name.errors %}
-                  <div class="text-danger small">
-                    {{ form.last_name.errors }}
-                  </div>
+                  {{ form.last_name.label_tag }}
+                  {{ form.last_name }}
+                  {% if form.last_name.errors %}
+                  <div class="text-danger small">{{ form.last_name.errors }}</div>
                   {% endif %}
                 </div>
               </div>
 
               <div class="mb-3">
-                {{ form.password1.label_tag }} {{ form.password1 }} {% if form.password1.errors %}
+                {{ form.password1.label_tag }}
+                {{ form.password1 }}
+                {% if form.password1.errors %}
                 <div class="text-danger small">{{ form.password1.errors }}</div>
                 {% endif %}
               </div>
 
               <div class="mb-3">
-                {{ form.password2.label_tag }} {{ form.password2 }} {% if form.password2.errors %}
+                {{ form.password2.label_tag }}
+                {{ form.password2 }}
+                {% if form.password2.errors %}
                 <div class="text-danger small">{{ form.password2.errors }}</div>
                 {% endif %}
               </div>
@@ -69,10 +187,21 @@
               Already have an account?
               <a href="{% url 'user:login' %}">Log in</a>
             </p>
+
           </div>
         </div>
+
+        <!-- Right side: Image card -->
+        <div class="col-lg-5" data-aos="fade-left" data-aos-delay="200">
+          <div class="signup-image-card">
+            <img src="{% static 'img/real-estate/property-exterior-1.webp' %}" alt="Signup Image">
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
+
 </main>
+
 {% endblock content %}

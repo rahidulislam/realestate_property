@@ -1,0 +1,40 @@
+{% extends 'dashboard/base_dashboard.html' %}
+{% block content %}
+
+<h3 class="mb-4">Buyer Dashboard</h3>
+
+<div class="row">
+
+  <div class="col-md-4">
+    <div class="card-box">
+      <h5 class="card-title">Saved Properties</h5>
+      <h2 style="font-weight:700; color:#225649;">{{ saved }}</h2>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card-box">
+      <h5 class="card-title">Requests Sent</h5>
+      <h2 style="font-weight:700; color:#225649;">{{ requests }}</h2>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card-box">
+      <h5 class="card-title">Appointments</h5>
+      <h2 style="font-weight:700; color:#225649;">{{ appointments }}</h2>
+    </div>
+  </div>
+
+</div>
+
+<div class="card-box mt-4">
+  <h5 class="card-title">Recent Saved Properties</h5>
+  <ul>
+    {% for prop in saved_list %}
+      <li>{{ prop.title }} — ${{ prop.price }}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}

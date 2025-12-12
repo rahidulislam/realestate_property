@@ -13,6 +13,9 @@ from .views import (
     ContactView,
     PrivacyPolicyView,
     TermsView,
+    SellerDashboardView,
+    AgentDashboardView,
+    BuyerDashboardView,
 )
 
 app_name = "core"
@@ -31,4 +34,7 @@ urlpatterns = [
     path("contact/", ContactView.as_view(), name="contact"),
     path("privacy-policy/", PrivacyPolicyView.as_view(), name="privacy_policy"),
     path("terms/", TermsView.as_view(), name="terms"),
+    path("seller-dashboard/", SellerDashboardView.as_view(), name="seller_dashboard"),
+    path("agent-dashboard/", AgentDashboardView.as_view(), name="agent_dashboard"),
+    path("buyer-dashboard/", BuyerDashboardView.as_view(), name="buyer_dashboard"),
 ]

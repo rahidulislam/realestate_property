@@ -1,0 +1,50 @@
+{% extends 'dashboard/base_dashboard.html' %}
+{% block content %}
+
+<h3 class="mb-4">Agent Dashboard</h3>
+
+<div class="row">
+
+  <div class="col-md-4">
+    <div class="card-box">
+      <h5 class="card-title">Assigned Properties</h5>
+      <h2 style="font-weight:700; color:#225649;">{{ assigned }}</h2>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card-box">
+      <h5 class="card-title">Active Clients</h5>
+      <h2 style="font-weight:700; color:#225649;">{{ clients }}</h2>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card-box">
+      <h5 class="card-title">Total Commissions</h5>
+      <h2 style="font-weight:700; color:#225649;">${{ commissions }}</h2>
+    </div>
+  </div>
+
+</div>
+
+<div class="card-box mt-4">
+  <h5 class="card-title">Recent Leads</h5>
+  <table class="table">
+    <thead>
+      <tr><th>Name</th><th>Property</th><th>Phone</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+      {% for c in leads %}
+      <tr>
+        <td>{{ c.name }}</td>
+        <td>{{ c.property }}</td>
+        <td>{{ c.phone }}</td>
+        <td><a href="#" class="btn btn-sm btn-primary">Contact</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

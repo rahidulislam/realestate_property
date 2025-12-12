@@ -1,6 +1,8 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from realestate_property.base_model import TimeStamp
 from .managers import CustomUserManager
+
 
 
 
@@ -10,15 +12,18 @@ from .managers import CustomUserManager
 class CustomUser(AbstractUser):
     ADMIN = "admin"
     AGENT = "agent"
-    CUSTOMER = "customer"
+    BUYER = "buyer"
+    SELLER = "seller"
 
     ROLE_CHOICES = [
         (ADMIN, "Admin"),
         (AGENT, "Agent"),
-        (CUSTOMER, "Customer"),
+        (BUYER, "Buyer"),
+        (SELLER, "Seller"),
     ]
 
-    role = models.CharField(max_length=20, choices=ROLE_CHOICES, default=CUSTOMER)
+    role = models.CharField(max_length=20, choices=ROLE_CHOICES)
+    is_verified = models.BooleanField(default=False)
     username = None
     email = models.EmailField(unique=True)
     USERNAME_FIELD = "email"
@@ -32,3 +37,19 @@ class CustomUser(AbstractUser):
     class Meta:
         verbose_name = "user"
         verbose_name_plural = "users"
+class BuyerProfile(TimeStamp):
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    phone = models.CharField(max_length=20, blank=True)
+    interest_area = models.CharField(max_length=255, blank=True)
+
+class SellerProfile(TimeStamp):
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    phone = models.CharField(max_length=20)
+    national_id = models.CharField(max_length=20)
+    address = models.CharField(max_length=255)
+    approved = models.BooleanField(default=False)  # Admin Approval
+class AgentProfile(TimeStamp):
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    phone = models.CharField(max_length=20)
+    assigned_area = models.CharField(max_length=255)
+    agency_name = models.CharField(max_length=255, blank=True)

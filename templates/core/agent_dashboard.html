@@ -1,0 +1,71 @@
+<!-- ================= AGENT DASHBOARD ================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Dashboard</title>
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    .dashboard-sidebar { width: 260px; background: #f8f9fa; height: 100vh; position: fixed; }
+    .dashboard-content { margin-left: 270px; padding: 30px; }
+    .sidebar-item { padding: 15px 20px; display: block; color: #444; font-weight: 500; }
+    .sidebar-item:hover, .active { background: #0d6efd; color: #fff !important; }
+    .stat-card { border-radius: 10px; padding: 25px; background: #fff; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+  </style>
+</head>
+<body>
+
+<div class="dashboard-sidebar">
+  <h5 class="text-center py-4">Agent Panel</h5>
+  <a class="sidebar-item active" href="#">Dashboard</a>
+  <a class="sidebar-item" href="#">Managed Properties</a>
+  <a class="sidebar-item" href="#">Appointments</a>
+  <a class="sidebar-item" href="#">Inquiries</a>
+  <a class="sidebar-item" href="#">Profile</a>
+  <a class="sidebar-item text-danger" href="#">Logout</a>
+</div>
+
+<div class="dashboard-content">
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="stat-card">
+        <h3>18</h3>
+        <p>Properties Managing</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="stat-card">
+        <h3>8</h3>
+        <p>Appointments Today</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="stat-card">
+        <h3>31</h3>
+        <p>New Leads</p>
+      </div>
+    </div>
+  </div>
+
+  <h4 class="mt-5 mb-3">Upcoming Appointments</h4>
+  <table class="table table-striped">
+    <tr>
+      <th>Buyer</th>
+      <th>Property</th>
+      <th>Date</th>
+      <th>Status</th>
+    </tr>
+    <tr>
+      <td>Rahim</td>
+      <td>Luxury Villa</td>
+      <td>Tomorrow 4 PM</td>
+      <td><span class="badge bg-success">Confirmed</span></td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>

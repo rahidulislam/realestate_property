@@ -15,7 +15,7 @@ class SignupView(FormView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        messages.success(self.request, "Your account has been created.")
+        messages.success(self.request, "Your buyer account has been created.")
         return super().form_valid(form)
 
 

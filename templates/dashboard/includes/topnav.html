@@ -1,0 +1,26 @@
+<nav class="topbar d-flex justify-content-between align-items-center px-4 py-2">
+
+    <!-- Sidebar Toggle Button -->
+    <button id="sidebarToggle" class="btn btn-outline-success">
+        <i class="bi bi-list" style="font-size: 1.5rem;"></i>
+    </button>
+
+    <!-- Top Right Profile -->
+    <div class="dropdown">
+        <a class="d-flex align-items-center text-decoration-none text-dark dropdown-toggle"
+           href="#" data-bs-toggle="dropdown">
+
+            <img src=""
+                 class="rounded-circle me-2"
+                 width="40" height="40">
+{% comment %} {{ request.user.avatar.url if request.user.avatar else '/static/default-avatar.png' }} {% endcomment %}
+            <span>{{ request.user.username }}</span>
+        </a>
+
+        <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">My Profile</a></li>
+            {% comment %} <li><a class="dropdown-item text-danger" href="{% url 'logout' %}">Logout</a></li> {% endcomment %}
+        </ul>
+    </div>
+
+</nav>
