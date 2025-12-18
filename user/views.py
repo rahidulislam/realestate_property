@@ -1,6 +1,8 @@
 from django.contrib import messages
 from django.contrib.auth import login
-from django.contrib.auth.views import LoginView
+from django.contrib.auth import logout as auth_logout
+from django.contrib.auth.views import LoginView, LogoutView
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import FormView
 
@@ -24,3 +26,10 @@ class SigninView(LoginView):
     authentication_form = CustomAuthenticationForm
     redirect_authenticated_user = True
     success_url = reverse_lazy("core:home")
+
+class SignoutView(LogoutView):
+    next_page = reverse_lazy("core:home")
+
+    def dispatch(self, request, *args, **kwargs):
+        messages.success(request, "You have been signed out.")
+        return super().dispatch(request, *args, **kwargs)
