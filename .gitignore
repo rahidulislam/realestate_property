@@ -66,9 +66,9 @@ db.sqlite3
 local_settings.py
 # Django media and static files
 media/
-staticfiles/
+# staticfiles/
 # Static collected files (if you collect to a folder)
-static/
+# static/
 
 # Django log files
 *.log

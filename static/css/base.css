@@ -1,0 +1,91 @@
+/* =========================
+   GLOBAL FORM INPUT STYLES
+========================= */
+
+.form-control {
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    font-size: 15px;
+    padding: 10px 14px;
+    transition: all 0.25s ease-in-out;
+}
+
+/* Hover effect */
+.form-control:hover {
+    border-color: #0e6b50;
+}
+
+/* Focus effect (TheProperty style) */
+.form-control:focus {
+    border-color: #0e6b50;
+    box-shadow: 0 0 0 3px rgba(14, 107, 80, 0.15);
+    outline: none;
+}
+
+/* Textarea */
+textarea.form-control {
+    min-height: 140px;
+    resize: none;
+}
+
+/* =========================
+   GLOBAL BUTTON STYLES
+========================= */
+
+.btn-primary,
+.btn-submit {
+    background-color: #0e6b50;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    transition: all 0.25s ease-in-out;
+}
+
+/* Hover */
+.btn-primary:hover,
+.btn-submit:hover {
+    background-color: #0b5a44;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(14, 107, 80, 0.25);
+}
+
+/* Active (click) */
+.btn-primary:active,
+.btn-submit:active {
+    background-color: #0b5a44 !important;
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(14, 107, 80, 0.35);
+}
+
+/* Focus */
+.btn-primary:focus,
+.btn-submit:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(14, 107, 80, 0.25);
+}
+
+/* =========================
+   CARD STYLE (Form Container)
+========================= */
+
+.card {
+    border-radius: 14px;
+    border: none;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* Login page image card */
+.login-image-card {
+    border: none;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.login-image-card img {
+    height: 100%;
+    object-fit: cover;
+}
