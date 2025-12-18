@@ -101,10 +101,9 @@
         </li>
         {% if user.is_authenticated %}
         <li class="dropdown">
-          <a href="#"
-            ><span>My Profile</span>
-            <i class="bi bi-chevron-down toggle-dropdown"></i
-          ></a>
+          <a href="#"><span>{{user.first_name}}'s Profile</span>
+            <i class="bi bi-chevron-down toggle-dropdown"></i>
+          </a>
           <ul>
             <li>
               <a href="{% url 'core:property_detail' %}">Property Details</a>
