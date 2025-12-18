@@ -14,13 +14,15 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Montserrat",  sans-serif;
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Montserrat", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+:root {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #323b3b; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #163535; /* Color for headings, subheadings and title throughout the website */
@@ -31,7 +33,7 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #323b3b;  /* The default color of the main navmenu links */
+  --nav-color: #323b3b; /* The default color of the main navmenu links */
   --nav-hover-color: #2c7a7b; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
@@ -275,7 +277,7 @@ h6 {
     padding-right: 0;
   }
 
-  .navmenu li:hover>a,
+  .navmenu li:hover > a,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
@@ -314,11 +316,11 @@ h6 {
 
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
-  .navmenu .dropdown ul li:hover>a {
+  .navmenu .dropdown ul li:hover > a {
     color: var(--nav-dropdown-hover-color);
   }
 
-  .navmenu .dropdown:hover>ul {
+  .navmenu .dropdown:hover > ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -330,7 +332,7 @@ h6 {
     visibility: hidden;
   }
 
-  .navmenu .dropdown .dropdown:hover>ul {
+  .navmenu .dropdown .dropdown:hover > ul {
     opacity: 1;
     top: 0;
     left: -100%;
@@ -433,7 +435,7 @@ h6 {
     background-color: rgba(33, 37, 41, 0.1);
   }
 
-  .navmenu .dropdown>.dropdown-active {
+  .navmenu .dropdown > .dropdown-active {
     display: block;
     background-color: rgba(33, 37, 41, 0.03);
   }
@@ -460,7 +462,7 @@ h6 {
     transition: 0.3s;
   }
 
-  .mobile-nav-active .navmenu>ul {
+  .mobile-nav-active .navmenu > ul {
     display: block;
   }
 }
@@ -512,10 +514,11 @@ h6 {
   display: flex;
   border-radius: 50px;
   overflow: hidden;
-  box-shadow: 0 2px 10px color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0 2px 10px
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
-.footer .newsletter-form input[type=email] {
+.footer .newsletter-form input[type="email"] {
   flex: 1;
   padding: 12px 20px;
   border: none;
@@ -524,12 +527,12 @@ h6 {
   font-size: 14px;
 }
 
-.footer .newsletter-form input[type=email]:focus {
+.footer .newsletter-form input[type="email"]:focus {
   outline: none;
   box-shadow: none;
 }
 
-.footer .newsletter-form input[type=email]::placeholder {
+.footer .newsletter-form input[type="email"]::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 60%);
 }
 
@@ -761,8 +764,8 @@ h6 {
   }
 }
 
-input[type=text],
-input[type=email],
+input[type="text"],
+input[type="email"],
 textarea {
   color: var(--default-color);
   background-color: var(--surface-color);
@@ -770,14 +773,14 @@ textarea {
   border-color: color-mix(in srgb, var(--default-color), transparent 80%);
 }
 
-input[type=text]:focus,
-input[type=email]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
 textarea:focus {
   border-color: var(--accent-color);
 }
 
-input[type=text]::placeholder,
-input[type=email]::placeholder,
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
 textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
@@ -904,11 +907,11 @@ textarea::placeholder {
   font-weight: 400;
 }
 
-.page-title nav ol li+li {
+.page-title nav ol li + li {
   padding-left: 10px;
 }
 
-.page-title nav ol li+li::before {
+.page-title nav ol li + li::before {
   content: "/";
   display: inline-block;
   padding-right: 10px;
@@ -928,7 +931,6 @@ section,
 }
 
 @media (max-width: 1199px) {
-
   section,
   .section {
     scroll-margin-top: 66px;
@@ -987,7 +989,11 @@ section,
 --------------------------------------------------------------*/
 .hero {
   position: relative;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 95%) 0%, color-mix(in srgb, var(--background-color), transparent 5%) 100%);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent-color), transparent 95%) 0%,
+    color-mix(in srgb, var(--background-color), transparent 5%) 100%
+  );
   padding: 140px 0 60px;
   min-height: 100vh;
   display: flex;
@@ -1045,7 +1051,8 @@ section,
   background: var(--surface-color);
   padding: 32px;
   border-radius: 16px;
-  box-shadow: 0 20px 40px color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0 20px 40px
+    color-mix(in srgb, var(--default-color), transparent 90%);
   margin-bottom: 40px;
   backdrop-filter: blur(10px);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
@@ -1064,7 +1071,8 @@ section,
 .hero .search-form .form-floating .form-control:focus,
 .hero .search-form .form-floating .form-select:focus {
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--accent-color), transparent 75%);
+  box-shadow: 0 0 0 0.25rem
+    color-mix(in srgb, var(--accent-color), transparent 75%);
 }
 
 .hero .search-form .form-floating .form-control::placeholder,
@@ -1095,7 +1103,8 @@ section,
 .hero .search-form .btn-search:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 10%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-color), transparent 70%);
+  box-shadow: 0 8px 20px
+    color-mix(in srgb, var(--accent-color), transparent 70%);
 }
 
 .hero .search-form .btn-search i {
@@ -1134,7 +1143,8 @@ section,
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 25px 50px color-mix(in srgb, var(--default-color), transparent 80%);
+  box-shadow: 0 25px 50px
+    color-mix(in srgb, var(--default-color), transparent 80%);
 }
 
 .hero .hero-images .image-stack .main-image img {
@@ -1177,7 +1187,8 @@ section,
   height: 200px;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 15px 30px color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 15px 30px
+    color-mix(in srgb, var(--default-color), transparent 85%);
   border: 4px solid var(--surface-color);
 }
 
@@ -1194,7 +1205,8 @@ section,
   background: var(--surface-color);
   padding: 20px;
   border-radius: 16px;
-  box-shadow: 0 20px 40px color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 20px 40px
+    color-mix(in srgb, var(--default-color), transparent 85%);
   backdrop-filter: blur(10px);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   width: 280px;
@@ -1230,19 +1242,39 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
-.hero .hero-images .image-stack .floating-card .agent-info .agent-details .rating {
+.hero
+  .hero-images
+  .image-stack
+  .floating-card
+  .agent-info
+  .agent-details
+  .rating {
   display: flex;
   align-items: center;
   gap: 2px;
   font-size: 12px;
 }
 
-.hero .hero-images .image-stack .floating-card .agent-info .agent-details .rating i {
+.hero
+  .hero-images
+  .image-stack
+  .floating-card
+  .agent-info
+  .agent-details
+  .rating
+  i {
   color: #ffc107;
   font-size: 10px;
 }
 
-.hero .hero-images .image-stack .floating-card .agent-info .agent-details .rating span {
+.hero
+  .hero-images
+  .image-stack
+  .floating-card
+  .agent-info
+  .agent-details
+  .rating
+  span {
   margin-left: 6px;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
@@ -1387,22 +1419,43 @@ section,
   gap: 1rem;
 }
 
-.home-about .image-section .main-image-wrapper .floating-card .card-content .icon {
+.home-about
+  .image-section
+  .main-image-wrapper
+  .floating-card
+  .card-content
+  .icon {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), black 10%));
+  background: linear-gradient(
+    135deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), black 10%)
+  );
   border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.home-about .image-section .main-image-wrapper .floating-card .card-content .icon i {
+.home-about
+  .image-section
+  .main-image-wrapper
+  .floating-card
+  .card-content
+  .icon
+  i {
   color: var(--contrast-color);
   font-size: 1.3rem;
 }
 
-.home-about .image-section .main-image-wrapper .floating-card .card-content .text .number {
+.home-about
+  .image-section
+  .main-image-wrapper
+  .floating-card
+  .card-content
+  .text
+  .number {
   display: block;
   font-size: 1.8rem;
   font-weight: 700;
@@ -1411,12 +1464,24 @@ section,
 }
 
 @media (max-width: 768px) {
-  .home-about .image-section .main-image-wrapper .floating-card .card-content .text .number {
+  .home-about
+    .image-section
+    .main-image-wrapper
+    .floating-card
+    .card-content
+    .text
+    .number {
     font-size: 1.5rem;
   }
 }
 
-.home-about .image-section .main-image-wrapper .floating-card .card-content .text .label {
+.home-about
+  .image-section
+  .main-image-wrapper
+  .floating-card
+  .card-content
+  .text
+  .label {
   font-size: 0.85rem;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   font-weight: 500;
@@ -1467,7 +1532,11 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), black 15%));
+  background: linear-gradient(
+    135deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), black 15%)
+  );
   color: var(--contrast-color);
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
@@ -1597,13 +1666,15 @@ section,
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-color), transparent 70%);
+  box-shadow: 0 10px 30px
+    color-mix(in srgb, var(--accent-color), transparent 70%);
 }
 
 .home-about .content-wrapper .cta-wrapper .btn-primary:hover {
   background: color-mix(in srgb, var(--accent-color), black 10%);
   transform: translateY(-2px);
-  box-shadow: 0 15px 40px color-mix(in srgb, var(--accent-color), transparent 60%);
+  box-shadow: 0 15px 40px
+    color-mix(in srgb, var(--accent-color), transparent 60%);
   color: var(--contrast-color);
 }
 
@@ -1674,7 +1745,8 @@ section,
 .featured-properties .highlight-card {
   background-color: var(--surface-color);
   border-radius: 18px;
-  box-shadow: 0 6px 28px color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0 6px 28px
+    color-mix(in srgb, var(--default-color), transparent 90%);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -1683,7 +1755,8 @@ section,
 
 .featured-properties .highlight-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 36px color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 10px 36px
+    color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .featured-properties .highlight-card .media {
@@ -1922,14 +1995,16 @@ section,
   gap: 14px;
   background: var(--surface-color);
   border-radius: 14px;
-  box-shadow: 0 4px 18px color-mix(in srgb, var(--default-color), transparent 92%);
+  box-shadow: 0 4px 18px
+    color-mix(in srgb, var(--default-color), transparent 92%);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .featured-properties .mini-list .mini-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--default-color), transparent 88%);
+  box-shadow: 0 8px 24px
+    color-mix(in srgb, var(--default-color), transparent 88%);
 }
 
 .featured-properties .mini-list .mini-card .thumb {
@@ -2044,7 +2119,12 @@ section,
   transition: 0.3s;
 }
 
-.featured-properties .mini-list .mini-card .mini-body .mini-foot .mini-btn:hover {
+.featured-properties
+  .mini-list
+  .mini-card
+  .mini-body
+  .mini-foot
+  .mini-btn:hover {
   background: color-mix(in srgb, var(--accent-color), black 12%);
   transform: translateY(-2px);
 }
@@ -2071,13 +2151,15 @@ section,
   border-radius: 16px;
   overflow: hidden;
   height: 100%;
-  box-shadow: 0 4px 22px color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0 4px 22px
+    color-mix(in srgb, var(--default-color), transparent 90%);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .featured-properties .stack-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 28px color-mix(in srgb, var(--default-color), transparent 86%);
+  box-shadow: 0 8px 28px
+    color-mix(in srgb, var(--default-color), transparent 86%);
 }
 
 .featured-properties .stack-card .stack-media {
@@ -2229,7 +2311,8 @@ section,
 
 .featured-services .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 25px 60px color-mix(in srgb, var(--default-color), transparent 88%);
+  box-shadow: 0 25px 60px
+    color-mix(in srgb, var(--default-color), transparent 88%);
 }
 
 .featured-services .service-card:hover::before {
@@ -2251,7 +2334,11 @@ section,
 }
 
 .featured-services .service-card.featured {
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), black 15%));
+  background: linear-gradient(
+    135deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), black 15%)
+  );
   color: var(--contrast-color);
 }
 
@@ -2283,11 +2370,20 @@ section,
   color: color-mix(in srgb, var(--contrast-color), transparent 15%);
 }
 
-.featured-services .service-card.featured .service-content .service-features li {
+.featured-services
+  .service-card.featured
+  .service-content
+  .service-features
+  li {
   color: var(--contrast-color);
 }
 
-.featured-services .service-card.featured .service-content .service-features li i {
+.featured-services
+  .service-card.featured
+  .service-content
+  .service-features
+  li
+  i {
   color: var(--contrast-color);
 }
 
@@ -2454,7 +2550,8 @@ section,
 .featured-services .btn-all-services:hover {
   color: var(--contrast-color);
   transform: translateY(-3px);
-  box-shadow: 0 15px 35px color-mix(in srgb, var(--accent-color), transparent 70%);
+  box-shadow: 0 15px 35px
+    color-mix(in srgb, var(--accent-color), transparent 70%);
 }
 
 .featured-services .btn-all-services:hover::before {
@@ -2546,7 +2643,8 @@ section,
   background: var(--surface-color);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 20px color-mix(in srgb, var(--default-color), transparent 94%);
+  box-shadow: 0 4px 20px
+    color-mix(in srgb, var(--default-color), transparent 94%);
   transition: all 0.3s ease;
   height: 100%;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
@@ -2554,7 +2652,8 @@ section,
 
 .featured-agents .agent-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 40px color-mix(in srgb, var(--default-color), transparent 88%);
+  box-shadow: 0 12px 40px
+    color-mix(in srgb, var(--default-color), transparent 88%);
 }
 
 .featured-agents .agent-card:hover .agent-image img {
@@ -2586,7 +2685,11 @@ section,
 .featured-agents .agent-image .agent-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 85%) 0%, color-mix(in srgb, var(--heading-color), transparent 85%) 100%);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent-color), transparent 85%) 0%,
+    color-mix(in srgb, var(--heading-color), transparent 85%) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2611,20 +2714,33 @@ section,
   justify-content: center;
   font-size: 18px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 4px 12px
+    color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
-.featured-agents .agent-image .agent-overlay .contact-buttons .btn-contact:hover {
+.featured-agents
+  .agent-image
+  .agent-overlay
+  .contact-buttons
+  .btn-contact:hover {
   background: var(--accent-color);
   color: var(--contrast-color);
   transform: translateY(-2px) scale(1.1);
 }
 
-.featured-agents .agent-image .agent-overlay .contact-buttons .btn-contact:nth-child(2):hover {
+.featured-agents
+  .agent-image
+  .agent-overlay
+  .contact-buttons
+  .btn-contact:nth-child(2):hover {
   background: #dc3545;
 }
 
-.featured-agents .agent-image .agent-overlay .contact-buttons .btn-contact:nth-child(3):hover {
+.featured-agents
+  .agent-image
+  .agent-overlay
+  .contact-buttons
+  .btn-contact:nth-child(3):hover {
   background: #25d366;
 }
 
@@ -2647,7 +2763,11 @@ section,
 }
 
 .featured-agents .agent-image .status-badge.certified {
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #0056b3 30%));
+  background: linear-gradient(
+    135deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), #0056b3 30%)
+  );
   color: var(--contrast-color);
 }
 
@@ -2852,7 +2972,11 @@ section,
   .featured-agents .agent-image .agent-overlay {
     opacity: 1;
     visibility: visible;
-    background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 90%) 0%, color-mix(in srgb, var(--heading-color), transparent 90%) 100%);
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--accent-color), transparent 90%) 0%,
+      color-mix(in srgb, var(--heading-color), transparent 90%) 100%
+    );
   }
 
   .featured-agents .agent-image .agent-overlay .contact-buttons .btn-contact {
@@ -2995,7 +3119,11 @@ section,
 --------------------------------------------------------------*/
 .why-us {
   padding: 100px 0;
-  background: linear-gradient(135deg, var(--background-color) 0%, var(--surface-color) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--background-color) 0%,
+    var(--surface-color) 100%
+  );
   position: relative;
   overflow: hidden;
 }
@@ -3056,18 +3184,33 @@ section,
   align-items: center;
 }
 
-.why-us .image-showcase .main-image-wrapper .image-overlay .overlay-content .play-icon {
+.why-us
+  .image-showcase
+  .main-image-wrapper
+  .image-overlay
+  .overlay-content
+  .play-icon {
   font-size: 4rem;
   margin-bottom: 1rem;
   transition: transform 0.3s ease;
   cursor: pointer;
 }
 
-.why-us .image-showcase .main-image-wrapper .image-overlay .overlay-content .play-icon:hover {
+.why-us
+  .image-showcase
+  .main-image-wrapper
+  .image-overlay
+  .overlay-content
+  .play-icon:hover {
   transform: scale(1.1);
 }
 
-.why-us .image-showcase .main-image-wrapper .image-overlay .overlay-content span {
+.why-us
+  .image-showcase
+  .main-image-wrapper
+  .image-overlay
+  .overlay-content
+  span {
   font-weight: 600;
   font-size: 1.1rem;
   padding: 0 0 15px 10px;
@@ -3132,7 +3275,11 @@ section,
 .why-us .image-showcase .experience-card .card-icon {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), transparent 30%));
+  background: linear-gradient(
+    135deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), transparent 30%)
+  );
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -3209,7 +3356,11 @@ section,
 .why-us .content-wrapper .benefits-grid .benefit-item .benefit-icon {
   width: 45px;
   height: 45px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), transparent 20%));
+  background: linear-gradient(
+    135deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), transparent 20%)
+  );
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -3252,7 +3403,11 @@ section,
   text-align: center;
 }
 
-.why-us .content-wrapper .achievement-highlights .highlight-item .highlight-number {
+.why-us
+  .content-wrapper
+  .achievement-highlights
+  .highlight-item
+  .highlight-number {
   display: block;
   font-size: 2.2rem;
   font-weight: 700;
@@ -3260,7 +3415,11 @@ section,
   margin-bottom: 5px;
 }
 
-.why-us .content-wrapper .achievement-highlights .highlight-item .highlight-label {
+.why-us
+  .content-wrapper
+  .achievement-highlights
+  .highlight-item
+  .highlight-label {
   font-size: 0.9rem;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   font-weight: 500;
@@ -3286,14 +3445,19 @@ section,
 }
 
 .why-us .content-wrapper .action-buttons .btn.btn-primary {
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), transparent 20%));
+  background: linear-gradient(
+    135deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), transparent 20%)
+  );
   border: none;
   color: var(--contrast-color);
 }
 
 .why-us .content-wrapper .action-buttons .btn.btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-color), transparent 70%);
+  box-shadow: 0 10px 30px
+    color-mix(in srgb, var(--accent-color), transparent 70%);
 }
 
 .why-us .content-wrapper .action-buttons .btn.btn-outline {
@@ -3462,7 +3626,11 @@ section,
 --------------------------------------------------------------*/
 .call-to-action {
   padding: 100px 0;
-  background: linear-gradient(135deg, var(--background-color) 0%, color-mix(in srgb, var(--accent-color), transparent 95%) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--background-color) 0%,
+    color-mix(in srgb, var(--accent-color), transparent 95%) 100%
+  );
 }
 
 .call-to-action .section-badge {
@@ -3571,7 +3739,12 @@ section,
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transform: translateX(-100%);
   transition: transform 0.6s;
 }
@@ -3589,7 +3762,8 @@ section,
 .call-to-action .cta-actions .btn.btn-primary:hover {
   background-color: color-mix(in srgb, var(--accent-color), black 15%);
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px color-mix(in srgb, var(--accent-color), transparent 70%);
+  box-shadow: 0 10px 25px
+    color-mix(in srgb, var(--accent-color), transparent 70%);
 }
 
 .call-to-action .cta-actions .btn.btn-secondary {
@@ -3603,7 +3777,8 @@ section,
   color: var(--contrast-color);
   border-color: var(--accent-color);
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-color), transparent 75%);
+  box-shadow: 0 8px 20px
+    color-mix(in srgb, var(--accent-color), transparent 75%);
 }
 
 @media (max-width: 576px) {
@@ -3628,7 +3803,8 @@ section,
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 40px color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 20px 40px
+    color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .call-to-action .cta-visual .main-image img {
@@ -3658,11 +3834,12 @@ section,
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 8px 25px color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 8px 25px
+    color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .call-to-action .cta-visual .main-image .overlay-badge i {
-  color: #FFD700;
+  color: #ffd700;
   font-size: 1.1rem;
 }
 
@@ -3706,7 +3883,8 @@ section,
   display: flex;
   align-items: center;
   gap: 15px;
-  box-shadow: 0 10px 30px color-mix(in srgb, var(--default-color), transparent 88%);
+  box-shadow: 0 10px 30px
+    color-mix(in srgb, var(--default-color), transparent 88%);
   transition: transform 0.3s ease;
   min-width: 200px;
 }
@@ -3941,7 +4119,11 @@ section,
 }
 
 .about .achievements-grid {
-  background: linear-gradient(135deg, var(--surface-color), color-mix(in srgb, var(--surface-color), var(--accent-color) 5%));
+  background: linear-gradient(
+    135deg,
+    var(--surface-color),
+    color-mix(in srgb, var(--surface-color), var(--accent-color) 5%)
+  );
   border-radius: 20px;
   padding: 3rem 2rem;
   margin: 5rem 0;
@@ -4048,14 +4230,22 @@ section,
   }
 }
 
-.about .timeline-section .timeline .timeline-item:nth-child(even) .timeline-content {
+.about
+  .timeline-section
+  .timeline
+  .timeline-item:nth-child(even)
+  .timeline-content {
   text-align: right;
   padding-right: 2rem;
   padding-left: 0;
 }
 
 @media (max-width: 768px) {
-  .about .timeline-section .timeline .timeline-item:nth-child(even) .timeline-content {
+  .about
+    .timeline-section
+    .timeline
+    .timeline-item:nth-child(even)
+    .timeline-content {
     text-align: left;
     padding-right: 0;
   }
@@ -4222,7 +4412,8 @@ section,
 
 .properties .properties-header .sort-dropdown .form-select:focus {
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent-color), transparent 85%);
+  box-shadow: 0 0 0 0.2rem
+    color-mix(in srgb, var(--accent-color), transparent 85%);
 }
 
 .properties .properties-grid {
@@ -4245,14 +4436,16 @@ section,
   background-color: var(--surface-color);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 20px color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0 4px 20px
+    color-mix(in srgb, var(--default-color), transparent 90%);
   transition: all 0.3s ease;
   height: 100%;
 }
 
 .properties .property-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px color-mix(in srgb, var(--default-color), transparent 80%);
+  box-shadow: 0 8px 30px
+    color-mix(in srgb, var(--default-color), transparent 80%);
 }
 
 .properties .property-card .property-image {
@@ -4333,7 +4526,8 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 2px 8px
+    color-mix(in srgb, var(--default-color), transparent 85%);
   transition: all 0.3s ease;
 }
 
@@ -4342,7 +4536,11 @@ section,
   color: white;
 }
 
-.properties .property-card .property-image .property-overlay button.favorite-btn:hover {
+.properties
+  .property-card
+  .property-image
+  .property-overlay
+  button.favorite-btn:hover {
   background-color: #ef4444;
   color: white;
 }
@@ -4412,7 +4610,11 @@ section,
   gap: 10px;
   margin-bottom: 20px;
   padding: 12px 15px;
-  background-color: color-mix(in srgb, var(--surface-color), var(--default-color) 3%);
+  background-color: color-mix(
+    in srgb,
+    var(--surface-color),
+    var(--default-color) 3%
+  );
   border-radius: 8px;
 }
 
@@ -4427,18 +4629,36 @@ section,
   flex: 1;
 }
 
-.properties .property-card .property-content .property-agent .agent-info strong {
+.properties
+  .property-card
+  .property-content
+  .property-agent
+  .agent-info
+  strong {
   font-size: 14px;
   color: var(--heading-color);
   display: block;
 }
 
-.properties .property-card .property-content .property-agent .agent-info .agent-contact small {
+.properties
+  .property-card
+  .property-content
+  .property-agent
+  .agent-info
+  .agent-contact
+  small {
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   font-size: 12px;
 }
 
-.properties .property-card .property-content .property-agent .agent-info .agent-contact small i {
+.properties
+  .property-card
+  .property-content
+  .property-agent
+  .agent-info
+  .agent-contact
+  small
+  i {
   margin-right: 3px;
 }
 
@@ -4457,12 +4677,14 @@ section,
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 20px color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0 4px 20px
+    color-mix(in srgb, var(--default-color), transparent 90%);
   transition: all 0.3s ease;
 }
 
 .properties .property-list-item:hover {
-  box-shadow: 0 8px 30px color-mix(in srgb, var(--default-color), transparent 80%);
+  box-shadow: 0 8px 30px
+    color-mix(in srgb, var(--default-color), transparent 80%);
 }
 
 .properties .property-list-item .property-image {
@@ -4495,7 +4717,11 @@ section,
   border-radius: 15px;
 }
 
-.properties .property-list-item .property-image .property-badges .badge.featured {
+.properties
+  .property-list-item
+  .property-image
+  .property-badges
+  .badge.featured {
   background-color: #ff6b35;
   color: white;
 }
@@ -4505,12 +4731,20 @@ section,
   color: white;
 }
 
-.properties .property-list-item .property-image .property-badges .badge.for-rent {
+.properties
+  .property-list-item
+  .property-image
+  .property-badges
+  .badge.for-rent {
   background-color: #8b5cf6;
   color: white;
 }
 
-.properties .property-list-item .property-image .property-badges .badge.open-house {
+.properties
+  .property-list-item
+  .property-image
+  .property-badges
+  .badge.open-house {
   background-color: #f59e0b;
   color: white;
 }
@@ -4568,7 +4802,11 @@ section,
   gap: 8px;
 }
 
-.properties .property-list-item .property-content .property-agent .agent-avatar {
+.properties
+  .property-list-item
+  .property-content
+  .property-agent
+  .agent-avatar {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -4591,12 +4829,20 @@ section,
   font-size: 13px;
 }
 
-.properties .property-list-item .property-content .property-actions .btn-outline-secondary {
+.properties
+  .property-list-item
+  .property-content
+  .property-actions
+  .btn-outline-secondary {
   border-color: color-mix(in srgb, var(--default-color), transparent 70%);
   color: var(--default-color);
 }
 
-.properties .property-list-item .property-content .property-actions .btn-outline-secondary:hover {
+.properties
+  .property-list-item
+  .property-content
+  .property-actions
+  .btn-outline-secondary:hover {
   background-color: #ef4444;
   border-color: #ef4444;
   color: white;
@@ -4606,7 +4852,8 @@ section,
   background-color: var(--surface-color);
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 20px color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0 4px 20px
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .properties .properties-sidebar .filter-widget .filter-title {
@@ -4615,7 +4862,8 @@ section,
   font-weight: 600;
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 2px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+  border-bottom: 2px solid
+    color-mix(in srgb, var(--accent-color), transparent 80%);
 }
 
 .properties .properties-sidebar .filter-widget .filter-section {
@@ -4637,60 +4885,135 @@ section,
   color: var(--default-color);
 }
 
-.properties .properties-sidebar .filter-widget .filter-section .form-select:focus,
-.properties .properties-sidebar .filter-widget .filter-section .form-control:focus {
+.properties
+  .properties-sidebar
+  .filter-widget
+  .filter-section
+  .form-select:focus,
+.properties
+  .properties-sidebar
+  .filter-widget
+  .filter-section
+  .form-control:focus {
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent-color), transparent 85%);
+  box-shadow: 0 0 0 0.2rem
+    color-mix(in srgb, var(--accent-color), transparent 85%);
 }
 
-.properties .properties-sidebar .filter-widget .filter-section .form-select::placeholder,
-.properties .properties-sidebar .filter-widget .filter-section .form-control::placeholder {
+.properties
+  .properties-sidebar
+  .filter-widget
+  .filter-section
+  .form-select::placeholder,
+.properties
+  .properties-sidebar
+  .filter-widget
+  .filter-section
+  .form-control::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 50%);
 }
 
 .properties .properties-sidebar .filter-widget .filter-section .bedroom-filter,
-.properties .properties-sidebar .filter-widget .filter-section .bathroom-filter {
+.properties
+  .properties-sidebar
+  .filter-widget
+  .filter-section
+  .bathroom-filter {
   display: flex;
   gap: 5px;
   flex-wrap: wrap;
 }
 
-.properties .properties-sidebar .filter-widget .filter-section .bedroom-filter .filter-btn,
-.properties .properties-sidebar .filter-widget .filter-section .bathroom-filter .filter-btn {
+.properties
+  .properties-sidebar
+  .filter-widget
+  .filter-section
+  .bedroom-filter
+  .filter-btn,
+.properties
+  .properties-sidebar
+  .filter-widget
+  .filter-section
+  .bathroom-filter
+  .filter-btn {
   border-color: color-mix(in srgb, var(--default-color), transparent 70%);
   color: var(--default-color);
   font-size: 13px;
   padding: 5px 12px;
 }
 
-.properties .properties-sidebar .filter-widget .filter-section .bedroom-filter .filter-btn.active,
-.properties .properties-sidebar .filter-widget .filter-section .bathroom-filter .filter-btn.active {
+.properties
+  .properties-sidebar
+  .filter-widget
+  .filter-section
+  .bedroom-filter
+  .filter-btn.active,
+.properties
+  .properties-sidebar
+  .filter-widget
+  .filter-section
+  .bathroom-filter
+  .filter-btn.active {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
   color: white;
 }
 
-.properties .properties-sidebar .filter-widget .filter-section .bedroom-filter .filter-btn:hover:not(.active),
-.properties .properties-sidebar .filter-widget .filter-section .bathroom-filter .filter-btn:hover:not(.active) {
+.properties
+  .properties-sidebar
+  .filter-widget
+  .filter-section
+  .bedroom-filter
+  .filter-btn:hover:not(.active),
+.properties
+  .properties-sidebar
+  .filter-widget
+  .filter-section
+  .bathroom-filter
+  .filter-btn:hover:not(.active) {
   border-color: var(--accent-color);
   color: var(--accent-color);
 }
 
-.properties .properties-sidebar .filter-widget .filter-section .features-filter .form-check {
+.properties
+  .properties-sidebar
+  .filter-widget
+  .filter-section
+  .features-filter
+  .form-check {
   margin-bottom: 8px;
 }
 
-.properties .properties-sidebar .filter-widget .filter-section .features-filter .form-check .form-check-input:checked {
+.properties
+  .properties-sidebar
+  .filter-widget
+  .filter-section
+  .features-filter
+  .form-check
+  .form-check-input:checked {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
 }
 
-.properties .properties-sidebar .filter-widget .filter-section .features-filter .form-check .form-check-input:focus {
+.properties
+  .properties-sidebar
+  .filter-widget
+  .filter-section
+  .features-filter
+  .form-check
+  .form-check-input:focus {
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent-color), transparent 85%);
+  box-shadow: 0 0 0 0.2rem
+    color-mix(in srgb, var(--accent-color), transparent 85%);
 }
 
-.properties .properties-sidebar .filter-widget .filter-section .features-filter .form-check .form-check-label {
+.properties
+  .properties-sidebar
+  .filter-widget
+  .filter-section
+  .features-filter
+  .form-check
+  .form-check-label {
   font-size: 14px;
   color: var(--default-color);
 }
@@ -4711,7 +5034,8 @@ section,
   background-color: var(--surface-color);
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 20px color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0 4px 20px
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .properties .properties-sidebar .featured-properties h5 {
@@ -4722,7 +5046,8 @@ section,
 
 .properties .properties-sidebar .featured-properties .featured-item {
   padding: 15px 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .properties .properties-sidebar .featured-properties .featured-item:last-child {
@@ -4741,11 +5066,19 @@ section,
   font-weight: 600;
 }
 
-.properties .properties-sidebar .featured-properties .featured-item .text-muted {
+.properties
+  .properties-sidebar
+  .featured-properties
+  .featured-item
+  .text-muted {
   color: color-mix(in srgb, var(--default-color), transparent 50%) !important;
 }
 
-.properties .properties-sidebar .featured-properties .featured-item .text-primary {
+.properties
+  .properties-sidebar
+  .featured-properties
+  .featured-item
+  .text-primary {
   color: var(--accent-color) !important;
   font-weight: 600;
   font-size: 14px;
@@ -4837,7 +5170,10 @@ section,
   cursor: zoom-in;
 }
 
-.property-details .property-gallery .main-image-container .image-zoom-container {
+.property-details
+  .property-gallery
+  .main-image-container
+  .image-zoom-container {
   position: absolute;
   top: 0;
   right: -100%;
@@ -4849,7 +5185,10 @@ section,
 }
 
 @media (max-width: 768px) {
-  .property-details .property-gallery .main-image-container .image-zoom-container {
+  .property-details
+    .property-gallery
+    .main-image-container
+    .image-zoom-container {
     display: none;
   }
 }
@@ -4879,11 +5218,17 @@ section,
   color: var(--contrast-color);
 }
 
-.property-details .property-gallery .main-image-container .image-nav-btn.prev-image {
+.property-details
+  .property-gallery
+  .main-image-container
+  .image-nav-btn.prev-image {
   left: 15px;
 }
 
-.property-details .property-gallery .main-image-container .image-nav-btn.next-image {
+.property-details
+  .property-gallery
+  .main-image-container
+  .image-nav-btn.next-image {
   right: 15px;
 }
 
@@ -4920,7 +5265,8 @@ section,
 .property-details .property-description {
   margin-top: 40px;
   padding: 30px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .property-details .property-description h3 {
@@ -4938,7 +5284,8 @@ section,
 .property-details .property-amenities {
   margin-top: 40px;
   padding: 30px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .property-details .property-amenities h3 {
@@ -4976,7 +5323,8 @@ section,
 .property-details .property-map {
   margin-top: 40px;
   padding: 30px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .property-details .property-map h3 {
@@ -5010,7 +5358,8 @@ section,
   background: var(--surface-color);
   border-radius: 12px;
   padding: 30px;
-  box-shadow: 0 5px 25px color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0 5px 25px
+    color-mix(in srgb, var(--default-color), transparent 90%);
   top: 100px;
 }
 
@@ -5037,7 +5386,8 @@ section,
 .property-details .property-overview .property-address {
   margin-bottom: 30px;
   padding-bottom: 20px;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .property-details .property-overview .property-address h4 {
@@ -5144,7 +5494,8 @@ section,
 
 .property-details .property-overview .contact-form .form-control:focus {
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent-color), transparent 80%);
+  box-shadow: 0 0 0 0.2rem
+    color-mix(in srgb, var(--accent-color), transparent 80%);
 }
 
 .property-details .property-overview .contact-form .form-control::placeholder {
@@ -5192,27 +5543,51 @@ section,
   transition: all 0.3s ease;
 }
 
-.property-details .property-overview .social-share .share-buttons .share-btn.facebook {
+.property-details
+  .property-overview
+  .social-share
+  .share-buttons
+  .share-btn.facebook {
   background: #3b5998;
 }
 
-.property-details .property-overview .social-share .share-buttons .share-btn.twitter {
+.property-details
+  .property-overview
+  .social-share
+  .share-buttons
+  .share-btn.twitter {
   background: #1da1f2;
 }
 
-.property-details .property-overview .social-share .share-buttons .share-btn.whatsapp {
+.property-details
+  .property-overview
+  .social-share
+  .share-buttons
+  .share-btn.whatsapp {
   background: #25d366;
 }
 
-.property-details .property-overview .social-share .share-buttons .share-btn.email {
+.property-details
+  .property-overview
+  .social-share
+  .share-buttons
+  .share-btn.email {
   background: #ea4335;
 }
 
-.property-details .property-overview .social-share .share-buttons .share-btn.print {
+.property-details
+  .property-overview
+  .social-share
+  .share-buttons
+  .share-btn.print {
   background: var(--heading-color);
 }
 
-.property-details .property-overview .social-share .share-buttons .share-btn:hover {
+.property-details
+  .property-overview
+  .social-share
+  .share-buttons
+  .share-btn:hover {
   transform: translateY(-2px);
   color: var(--contrast-color);
 }
@@ -5228,7 +5603,10 @@ section,
     grid-template-columns: 1fr;
   }
 
-  .property-details .property-gallery .main-image-container .main-property-image {
+  .property-details
+    .property-gallery
+    .main-image-container
+    .main-property-image {
     height: 300px;
   }
 
@@ -5554,7 +5932,12 @@ section,
   transition: all 0.3s ease;
 }
 
-.agents .agent-card .agent-photo .hover-overlay .contact-actions .action-btn:hover {
+.agents
+  .agent-card
+  .agent-photo
+  .hover-overlay
+  .contact-actions
+  .action-btn:hover {
   background: var(--accent-color);
   color: var(--contrast-color);
   transform: scale(1.1);
@@ -5646,7 +6029,8 @@ section,
   border-radius: 25px;
   overflow: hidden;
   margin-bottom: 3rem;
-  box-shadow: 0 20px 40px color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0 20px 40px
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .agent-profile .agent-profile-card .profile-background {
@@ -5675,31 +6059,51 @@ section,
   margin-bottom: 1.5rem;
 }
 
-.agent-profile .agent-profile-card .profile-content .agent-avatar .avatar-image {
+.agent-profile
+  .agent-profile-card
+  .profile-content
+  .agent-avatar
+  .avatar-image {
   width: 120px;
   height: 120px;
   border-radius: 20px;
   border: 4px solid var(--surface-color);
   object-fit: cover;
-  box-shadow: 0 10px 25px color-mix(in srgb, var(--default-color), transparent 80%);
+  box-shadow: 0 10px 25px
+    color-mix(in srgb, var(--default-color), transparent 80%);
 }
 
-.agent-profile .agent-profile-card .profile-content .agent-avatar .status-indicator {
+.agent-profile
+  .agent-profile-card
+  .profile-content
+  .agent-avatar
+  .status-indicator {
   display: flex;
   align-items: center;
   gap: 6px;
   background: var(--surface-color);
   padding: 8px 15px;
   border-radius: 20px;
-  box-shadow: 0 5px 15px color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 5px 15px
+    color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
-.agent-profile .agent-profile-card .profile-content .agent-avatar .status-indicator i {
+.agent-profile
+  .agent-profile-card
+  .profile-content
+  .agent-avatar
+  .status-indicator
+  i {
   color: #22c55e;
   font-size: 10px;
 }
 
-.agent-profile .agent-profile-card .profile-content .agent-avatar .status-indicator span {
+.agent-profile
+  .agent-profile-card
+  .profile-content
+  .agent-avatar
+  .status-indicator
+  span {
   font-size: 14px;
   font-weight: 600;
   color: var(--heading-color);
@@ -5713,12 +6117,20 @@ section,
 }
 
 @media (max-width: 768px) {
-  .agent-profile .agent-profile-card .profile-content .agent-header .agent-name {
+  .agent-profile
+    .agent-profile-card
+    .profile-content
+    .agent-header
+    .agent-name {
     font-size: 2rem;
   }
 }
 
-.agent-profile .agent-profile-card .profile-content .agent-header .agent-credentials {
+.agent-profile
+  .agent-profile-card
+  .profile-content
+  .agent-header
+  .agent-credentials {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -5726,13 +6138,23 @@ section,
   flex-wrap: wrap;
 }
 
-.agent-profile .agent-profile-card .profile-content .agent-header .agent-credentials .title {
+.agent-profile
+  .agent-profile-card
+  .profile-content
+  .agent-header
+  .agent-credentials
+  .title {
   color: var(--accent-color);
   font-weight: 600;
   font-size: 1.1rem;
 }
 
-.agent-profile .agent-profile-card .profile-content .agent-header .agent-credentials .verification-badge {
+.agent-profile
+  .agent-profile-card
+  .profile-content
+  .agent-header
+  .agent-credentials
+  .verification-badge {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -5744,7 +6166,13 @@ section,
   font-weight: 600;
 }
 
-.agent-profile .agent-profile-card .profile-content .agent-header .agent-credentials .verification-badge i {
+.agent-profile
+  .agent-profile-card
+  .profile-content
+  .agent-header
+  .agent-credentials
+  .verification-badge
+  i {
   font-size: 16px;
 }
 
@@ -5754,36 +6182,70 @@ section,
 }
 
 @media (max-width: 576px) {
-  .agent-profile .agent-profile-card .profile-content .agent-header .quick-stats {
+  .agent-profile
+    .agent-profile-card
+    .profile-content
+    .agent-header
+    .quick-stats {
     flex-direction: column;
     gap: 1rem;
   }
 }
 
-.agent-profile .agent-profile-card .profile-content .agent-header .quick-stats .quick-stat {
+.agent-profile
+  .agent-profile-card
+  .profile-content
+  .agent-header
+  .quick-stats
+  .quick-stat {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.agent-profile .agent-profile-card .profile-content .agent-header .quick-stats .quick-stat .stat-value {
+.agent-profile
+  .agent-profile-card
+  .profile-content
+  .agent-header
+  .quick-stats
+  .quick-stat
+  .stat-value {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--heading-color);
   margin-bottom: 0.25rem;
 }
 
-.agent-profile .agent-profile-card .profile-content .agent-header .quick-stats .quick-stat .star-rating {
+.agent-profile
+  .agent-profile-card
+  .profile-content
+  .agent-header
+  .quick-stats
+  .quick-stat
+  .star-rating {
   display: flex;
   gap: 2px;
 }
 
-.agent-profile .agent-profile-card .profile-content .agent-header .quick-stats .quick-stat .star-rating i {
+.agent-profile
+  .agent-profile-card
+  .profile-content
+  .agent-header
+  .quick-stats
+  .quick-stat
+  .star-rating
+  i {
   color: #fbbf24;
   font-size: 14px;
 }
 
-.agent-profile .agent-profile-card .profile-content .agent-header .quick-stats .quick-stat .stat-label {
+.agent-profile
+  .agent-profile-card
+  .profile-content
+  .agent-header
+  .quick-stats
+  .quick-stat
+  .stat-label {
   font-size: 0.9rem;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   font-weight: 500;
@@ -5816,7 +6278,8 @@ section,
   border-radius: 20px;
   padding: 2.5rem;
   margin-bottom: 2rem;
-  box-shadow: 0 8px 25px color-mix(in srgb, var(--default-color), transparent 93%);
+  box-shadow: 0 8px 25px
+    color-mix(in srgb, var(--default-color), transparent 93%);
 }
 
 .agent-profile .content-main .about-section h3,
@@ -5903,7 +6366,12 @@ section,
   box-shadow: 0 0 0 2px var(--accent-color);
 }
 
-.agent-profile .content-main .timeline .timeline-item .timeline-content .timeline-year {
+.agent-profile
+  .content-main
+  .timeline
+  .timeline-item
+  .timeline-content
+  .timeline-year {
   display: inline-block;
   background: var(--accent-color);
   color: var(--contrast-color);
@@ -5944,7 +6412,8 @@ section,
 
 .agent-profile .content-main .areas-grid .area-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-color), transparent 80%);
+  box-shadow: 0 8px 20px
+    color-mix(in srgb, var(--accent-color), transparent 80%);
 }
 
 .agent-profile .content-main .areas-grid .area-item i {
@@ -5973,7 +6442,8 @@ section,
   border-radius: 20px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 8px 25px color-mix(in srgb, var(--default-color), transparent 93%);
+  box-shadow: 0 8px 25px
+    color-mix(in srgb, var(--default-color), transparent 93%);
 }
 
 .agent-profile .content-sidebar .contact-widget h4,
@@ -6017,7 +6487,10 @@ section,
   background: color-mix(in srgb, var(--accent-color), transparent 95%);
 }
 
-.agent-profile .content-sidebar .contact-methods .contact-method:not(.primary):hover {
+.agent-profile
+  .content-sidebar
+  .contact-methods
+  .contact-method:not(.primary):hover {
   background: color-mix(in srgb, var(--accent-color), transparent 90%);
   border-color: var(--accent-color);
   transform: translateY(-2px);
@@ -6064,8 +6537,8 @@ section,
   transform: translateY(-3px);
 }
 
-.agent-profile .content-sidebar .php-email-form input[type=text],
-.agent-profile .content-sidebar .php-email-form input[type=email],
+.agent-profile .content-sidebar .php-email-form input[type="text"],
+.agent-profile .content-sidebar .php-email-form input[type="email"],
 .agent-profile .content-sidebar .php-email-form select,
 .agent-profile .content-sidebar .php-email-form textarea {
   color: var(--default-color);
@@ -6077,16 +6550,20 @@ section,
   transition: all 0.3s ease;
 }
 
-.agent-profile .content-sidebar .php-email-form input[type=text]:focus,
-.agent-profile .content-sidebar .php-email-form input[type=email]:focus,
+.agent-profile .content-sidebar .php-email-form input[type="text"]:focus,
+.agent-profile .content-sidebar .php-email-form input[type="email"]:focus,
 .agent-profile .content-sidebar .php-email-form select:focus,
 .agent-profile .content-sidebar .php-email-form textarea:focus {
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 0.15rem color-mix(in srgb, var(--accent-color), transparent 85%);
+  box-shadow: 0 0 0 0.15rem
+    color-mix(in srgb, var(--accent-color), transparent 85%);
 }
 
-.agent-profile .content-sidebar .php-email-form input[type=text]::placeholder,
-.agent-profile .content-sidebar .php-email-form input[type=email]::placeholder,
+.agent-profile .content-sidebar .php-email-form input[type="text"]::placeholder,
+.agent-profile
+  .content-sidebar
+  .php-email-form
+  input[type="email"]::placeholder,
 .agent-profile .content-sidebar .php-email-form select::placeholder,
 .agent-profile .content-sidebar .php-email-form textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 60%);
@@ -6126,7 +6603,11 @@ section,
   margin-bottom: 0;
 }
 
-.agent-profile .content-sidebar .achievement-list .achievement-item .achievement-icon {
+.agent-profile
+  .content-sidebar
+  .achievement-list
+  .achievement-item
+  .achievement-icon {
   width: 40px;
   height: 40px;
   background: var(--accent-color);
@@ -6137,18 +6618,33 @@ section,
   justify-content: center;
 }
 
-.agent-profile .content-sidebar .achievement-list .achievement-item .achievement-icon i {
+.agent-profile
+  .content-sidebar
+  .achievement-list
+  .achievement-item
+  .achievement-icon
+  i {
   font-size: 1.1rem;
 }
 
-.agent-profile .content-sidebar .achievement-list .achievement-item .achievement-text h6 {
+.agent-profile
+  .content-sidebar
+  .achievement-list
+  .achievement-item
+  .achievement-text
+  h6 {
   color: var(--heading-color);
   font-weight: 600;
   margin: 0 0 3px 0;
   font-size: 0.9rem;
 }
 
-.agent-profile .content-sidebar .achievement-list .achievement-item .achievement-text span {
+.agent-profile
+  .content-sidebar
+  .achievement-list
+  .achievement-item
+  .achievement-text
+  span {
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   font-size: 0.8rem;
 }
@@ -6177,7 +6673,11 @@ section,
   display: block;
 }
 
-.agent-profile .content-sidebar .office-details .office-address span:first-child,
+.agent-profile
+  .content-sidebar
+  .office-details
+  .office-address
+  span:first-child,
 .agent-profile .content-sidebar .office-details .office-hours span:first-child {
   font-weight: 600;
   color: var(--heading-color);
@@ -6196,7 +6696,8 @@ section,
   border-radius: 20px;
   padding: 2.5rem;
   margin-top: 2rem;
-  box-shadow: 0 8px 25px color-mix(in srgb, var(--default-color), transparent 93%);
+  box-shadow: 0 8px 25px
+    color-mix(in srgb, var(--default-color), transparent 93%);
 }
 
 .agent-profile .performance-metrics .metrics-grid {
@@ -6217,7 +6718,8 @@ section,
 
 .agent-profile .performance-metrics .metrics-grid .metric-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-color), transparent 85%);
+  box-shadow: 0 8px 20px
+    color-mix(in srgb, var(--accent-color), transparent 85%);
 }
 
 .agent-profile .performance-metrics .metrics-grid .metric-card .metric-icon {
@@ -6235,7 +6737,12 @@ section,
   font-size: 1.5rem;
 }
 
-.agent-profile .performance-metrics .metrics-grid .metric-card .metric-data .metric-number {
+.agent-profile
+  .performance-metrics
+  .metrics-grid
+  .metric-card
+  .metric-data
+  .metric-number {
   display: block;
   font-size: 1.8rem;
   font-weight: 700;
@@ -6244,7 +6751,12 @@ section,
   margin-bottom: 5px;
 }
 
-.agent-profile .performance-metrics .metrics-grid .metric-card .metric-data .metric-label {
+.agent-profile
+  .performance-metrics
+  .metrics-grid
+  .metric-card
+  .metric-data
+  .metric-label {
   display: block;
   color: color-mix(in srgb, var(--default-color), transparent 25%);
   font-size: 0.9rem;
@@ -6258,7 +6770,8 @@ section,
   background: var(--surface-color);
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 10px 40px color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0 10px 40px
+    color-mix(in srgb, var(--default-color), transparent 90%);
   transition: all 0.3s ease;
   height: 100%;
   display: flex;
@@ -6267,7 +6780,8 @@ section,
 
 .services .service-block:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 60px color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 20px 60px
+    color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .services .service-block .service-content {
@@ -6280,7 +6794,11 @@ section,
 .services .service-block .service-content .icon {
   width: 70px;
   height: 70px;
-  background: linear-gradient(45deg, var(--accent-color), color-mix(in srgb, var(--accent-color), var(--heading-color) 20%));
+  background: linear-gradient(
+    45deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), var(--heading-color) 20%)
+  );
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -6375,7 +6893,8 @@ section,
 .services .service-card:hover {
   border-color: var(--accent-color);
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px color-mix(in srgb, var(--accent-color), transparent 85%);
+  box-shadow: 0 15px 40px
+    color-mix(in srgb, var(--accent-color), transparent 85%);
 }
 
 .services .service-card .card-icon {
@@ -6457,7 +6976,11 @@ section,
 
 .services .cta-section {
   margin-top: 60px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), var(--heading-color) 20%));
+  background: linear-gradient(
+    135deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), var(--heading-color) 20%)
+  );
   border-radius: 15px;
   padding: 40px;
 }
@@ -6490,7 +7013,8 @@ section,
 .services .cta-section .btn-cta:hover {
   background: color-mix(in srgb, var(--contrast-color), transparent 10%);
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px color-mix(in srgb, var(--default-color), transparent 70%);
+  box-shadow: 0 10px 30px
+    color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
 @media (max-width: 768px) {
@@ -6621,14 +7145,21 @@ section,
   outline: 0;
 }
 
-.service-details .service-sidebar .quick-contact-card .form-control::placeholder,
+.service-details
+  .service-sidebar
+  .quick-contact-card
+  .form-control::placeholder,
 .service-details .service-sidebar .quick-contact-card select::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 50%);
 }
 
 .service-details .service-sidebar .quick-contact-card .btn-submit {
   width: 100%;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #000 15%));
+  background: linear-gradient(
+    135deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), #000 15%)
+  );
   color: var(--contrast-color);
   border: none;
   padding: 14px 24px;
@@ -6645,7 +7176,8 @@ section,
 
 .service-details .service-sidebar .quick-contact-card .btn-submit:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 60%);
+  box-shadow: 0 8px 25px
+    color-mix(in srgb, var(--accent-color), transparent 60%);
 }
 
 .service-details .service-sidebar .quick-contact-card .btn-submit i {
@@ -6670,20 +7202,34 @@ section,
   margin-bottom: 1rem;
 }
 
-.service-details .service-sidebar .expertise-highlights .highlight-list .highlight-item {
+.service-details
+  .service-sidebar
+  .expertise-highlights
+  .highlight-list
+  .highlight-item {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 8px 0;
 }
 
-.service-details .service-sidebar .expertise-highlights .highlight-list .highlight-item i {
+.service-details
+  .service-sidebar
+  .expertise-highlights
+  .highlight-list
+  .highlight-item
+  i {
   color: var(--accent-color);
   font-size: 16px;
   width: 20px;
 }
 
-.service-details .service-sidebar .expertise-highlights .highlight-list .highlight-item span {
+.service-details
+  .service-sidebar
+  .expertise-highlights
+  .highlight-list
+  .highlight-item
+  span {
   color: var(--default-color);
   font-size: 13px;
   font-weight: 500;
@@ -6742,7 +7288,11 @@ section,
   gap: 1.5rem;
 }
 
-.service-details .service-main-content .investment-types .types-grid .type-card {
+.service-details
+  .service-main-content
+  .investment-types
+  .types-grid
+  .type-card {
   background: var(--surface-color);
   padding: 2rem;
   border-radius: 16px;
@@ -6751,13 +7301,26 @@ section,
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
 }
 
-.service-details .service-main-content .investment-types .types-grid .type-card:hover {
+.service-details
+  .service-main-content
+  .investment-types
+  .types-grid
+  .type-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
 }
 
-.service-details .service-main-content .investment-types .types-grid .type-card .type-icon {
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #000 15%));
+.service-details
+  .service-main-content
+  .investment-types
+  .types-grid
+  .type-card
+  .type-icon {
+  background: linear-gradient(
+    135deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), #000 15%)
+  );
   color: var(--contrast-color);
   width: 60px;
   height: 60px;
@@ -6768,25 +7331,46 @@ section,
   margin-bottom: 1.5rem;
 }
 
-.service-details .service-main-content .investment-types .types-grid .type-card .type-icon i {
+.service-details
+  .service-main-content
+  .investment-types
+  .types-grid
+  .type-card
+  .type-icon
+  i {
   font-size: 24px;
 }
 
-.service-details .service-main-content .investment-types .types-grid .type-card h4 {
+.service-details
+  .service-main-content
+  .investment-types
+  .types-grid
+  .type-card
+  h4 {
   color: var(--heading-color);
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
-.service-details .service-main-content .investment-types .types-grid .type-card p {
+.service-details
+  .service-main-content
+  .investment-types
+  .types-grid
+  .type-card
+  p {
   color: var(--default-color);
   font-size: 14px;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 
-.service-details .service-main-content .investment-types .types-grid .type-card .roi-indicator {
+.service-details
+  .service-main-content
+  .investment-types
+  .types-grid
+  .type-card
+  .roi-indicator {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -6795,13 +7379,25 @@ section,
   border-radius: 8px;
 }
 
-.service-details .service-main-content .investment-types .types-grid .type-card .roi-indicator .roi-label {
+.service-details
+  .service-main-content
+  .investment-types
+  .types-grid
+  .type-card
+  .roi-indicator
+  .roi-label {
   color: var(--default-color);
   font-size: 12px;
   font-weight: 500;
 }
 
-.service-details .service-main-content .investment-types .types-grid .type-card .roi-indicator .roi-value {
+.service-details
+  .service-main-content
+  .investment-types
+  .types-grid
+  .type-card
+  .roi-indicator
+  .roi-value {
   color: var(--accent-color);
   font-size: 16px;
   font-weight: 700;
@@ -6818,28 +7414,47 @@ section,
   margin-bottom: 2rem;
 }
 
-.service-details .service-main-content .service-methodology .methodology-timeline {
+.service-details
+  .service-main-content
+  .service-methodology
+  .methodology-timeline {
   position: relative;
   padding-left: 2rem;
 }
 
-.service-details .service-main-content .service-methodology .methodology-timeline::before {
+.service-details
+  .service-main-content
+  .service-methodology
+  .methodology-timeline::before {
   content: "";
   position: absolute;
   left: 22px;
   top: 20px;
   bottom: 20px;
   width: 3px;
-  background: linear-gradient(to bottom, var(--accent-color), color-mix(in srgb, var(--accent-color), transparent 50%));
+  background: linear-gradient(
+    to bottom,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), transparent 50%)
+  );
   border-radius: 3px;
 }
 
-.service-details .service-main-content .service-methodology .methodology-timeline .timeline-item {
+.service-details
+  .service-main-content
+  .service-methodology
+  .methodology-timeline
+  .timeline-item {
   position: relative;
   margin-bottom: 2.5rem;
 }
 
-.service-details .service-main-content .service-methodology .methodology-timeline .timeline-item .timeline-marker {
+.service-details
+  .service-main-content
+  .service-methodology
+  .methodology-timeline
+  .timeline-item
+  .timeline-marker {
   position: absolute;
   left: -2rem;
   top: 1rem;
@@ -6854,27 +7469,50 @@ section,
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.service-details .service-main-content .service-methodology .methodology-timeline .timeline-item .timeline-marker .step-num {
+.service-details
+  .service-main-content
+  .service-methodology
+  .methodology-timeline
+  .timeline-item
+  .timeline-marker
+  .step-num {
   color: var(--accent-color);
   font-weight: 700;
   font-size: 14px;
 }
 
-.service-details .service-main-content .service-methodology .methodology-timeline .timeline-item .timeline-content {
+.service-details
+  .service-main-content
+  .service-methodology
+  .methodology-timeline
+  .timeline-item
+  .timeline-content {
   background: var(--surface-color);
   padding: 1.5rem 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-.service-details .service-main-content .service-methodology .methodology-timeline .timeline-item .timeline-content h5 {
+.service-details
+  .service-main-content
+  .service-methodology
+  .methodology-timeline
+  .timeline-item
+  .timeline-content
+  h5 {
   color: var(--heading-color);
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
-.service-details .service-main-content .service-methodology .methodology-timeline .timeline-item .timeline-content p {
+.service-details
+  .service-main-content
+  .service-methodology
+  .methodology-timeline
+  .timeline-item
+  .timeline-content
+  p {
   color: var(--default-color);
   font-size: 14px;
   line-height: 1.6;
@@ -6898,7 +7536,11 @@ section,
   gap: 2rem;
 }
 
-.service-details .service-main-content .performance-metrics .metrics-container .metric-box {
+.service-details
+  .service-main-content
+  .performance-metrics
+  .metrics-container
+  .metric-box {
   text-align: center;
   padding: 2rem;
   background: var(--surface-color);
@@ -6907,7 +7549,12 @@ section,
   border: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
 }
 
-.service-details .service-main-content .performance-metrics .metrics-container .metric-box .metric-value {
+.service-details
+  .service-main-content
+  .performance-metrics
+  .metrics-container
+  .metric-box
+  .metric-value {
   font-size: 3rem;
   font-weight: 800;
   color: var(--accent-color);
@@ -6915,14 +7562,24 @@ section,
   margin-bottom: 0.5rem;
 }
 
-.service-details .service-main-content .performance-metrics .metrics-container .metric-box .metric-label {
+.service-details
+  .service-main-content
+  .performance-metrics
+  .metrics-container
+  .metric-box
+  .metric-label {
   color: var(--heading-color);
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
 }
 
-.service-details .service-main-content .performance-metrics .metrics-container .metric-box .metric-description {
+.service-details
+  .service-main-content
+  .performance-metrics
+  .metrics-container
+  .metric-box
+  .metric-description {
   color: var(--default-color);
   font-size: 12px;
   opacity: 0.8;
@@ -6941,7 +7598,11 @@ section,
   gap: 2rem;
 }
 
-.service-details .service-main-content .testimonial-section .testimonial-grid .testimonial-card {
+.service-details
+  .service-main-content
+  .testimonial-section
+  .testimonial-grid
+  .testimonial-card {
   background: var(--surface-color);
   padding: 2rem;
   border-radius: 16px;
@@ -6949,11 +7610,22 @@ section,
   border-left: 4px solid var(--accent-color);
 }
 
-.service-details .service-main-content .testimonial-section .testimonial-grid .testimonial-card .quote-content {
+.service-details
+  .service-main-content
+  .testimonial-section
+  .testimonial-grid
+  .testimonial-card
+  .quote-content {
   margin-bottom: 1.5rem;
 }
 
-.service-details .service-main-content .testimonial-section .testimonial-grid .testimonial-card .quote-content p {
+.service-details
+  .service-main-content
+  .testimonial-section
+  .testimonial-grid
+  .testimonial-card
+  .quote-content
+  p {
   color: var(--default-color);
   font-style: italic;
   font-size: 15px;
@@ -6962,7 +7634,13 @@ section,
   position: relative;
 }
 
-.service-details .service-main-content .testimonial-section .testimonial-grid .testimonial-card .quote-content p::before {
+.service-details
+  .service-main-content
+  .testimonial-section
+  .testimonial-grid
+  .testimonial-card
+  .quote-content
+  p::before {
   content: '"';
   font-size: 3rem;
   color: color-mix(in srgb, var(--accent-color), transparent 30%);
@@ -6972,13 +7650,24 @@ section,
   font-family: Georgia, serif;
 }
 
-.service-details .service-main-content .testimonial-section .testimonial-grid .testimonial-card .client-info {
+.service-details
+  .service-main-content
+  .testimonial-section
+  .testimonial-grid
+  .testimonial-card
+  .client-info {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.service-details .service-main-content .testimonial-section .testimonial-grid .testimonial-card .client-info .client-photo {
+.service-details
+  .service-main-content
+  .testimonial-section
+  .testimonial-grid
+  .testimonial-card
+  .client-info
+  .client-photo {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -6986,14 +7675,28 @@ section,
   border: 2px solid color-mix(in srgb, var(--accent-color), transparent 70%);
 }
 
-.service-details .service-main-content .testimonial-section .testimonial-grid .testimonial-card .client-info .client-details h6 {
+.service-details
+  .service-main-content
+  .testimonial-section
+  .testimonial-grid
+  .testimonial-card
+  .client-info
+  .client-details
+  h6 {
   color: var(--heading-color);
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 2px;
 }
 
-.service-details .service-main-content .testimonial-section .testimonial-grid .testimonial-card .client-info .client-details span {
+.service-details
+  .service-main-content
+  .testimonial-section
+  .testimonial-grid
+  .testimonial-card
+  .client-info
+  .client-details
+  span {
   color: var(--accent-color);
   font-size: 12px;
   font-weight: 500;
@@ -7021,13 +7724,22 @@ section,
     left: 17px;
   }
 
-  .service-details .service-main-content .methodology-timeline .timeline-item .timeline-marker {
+  .service-details
+    .service-main-content
+    .methodology-timeline
+    .timeline-item
+    .timeline-marker {
     left: -1.5rem;
     width: 35px;
     height: 35px;
   }
 
-  .service-details .service-main-content .methodology-timeline .timeline-item .timeline-marker .step-num {
+  .service-details
+    .service-main-content
+    .methodology-timeline
+    .timeline-item
+    .timeline-marker
+    .step-num {
     font-size: 12px;
   }
 
@@ -7053,25 +7765,44 @@ section,
     font-size: 1rem;
   }
 
-  .service-details .service-main-content .performance-metrics .metrics-container {
+  .service-details
+    .service-main-content
+    .performance-metrics
+    .metrics-container {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
 
-  .service-details .service-main-content .performance-metrics .metrics-container .metric-box {
+  .service-details
+    .service-main-content
+    .performance-metrics
+    .metrics-container
+    .metric-box {
     padding: 1.5rem;
   }
 
-  .service-details .service-main-content .performance-metrics .metrics-container .metric-box .metric-value {
+  .service-details
+    .service-main-content
+    .performance-metrics
+    .metrics-container
+    .metric-box
+    .metric-value {
     font-size: 2.5rem;
   }
 
-  .service-details .service-main-content .testimonial-section .testimonial-grid {
+  .service-details
+    .service-main-content
+    .testimonial-section
+    .testimonial-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
-  .service-details .service-main-content .testimonial-section .testimonial-grid .testimonial-card {
+  .service-details
+    .service-main-content
+    .testimonial-section
+    .testimonial-grid
+    .testimonial-card {
     padding: 1.5rem;
   }
 }
@@ -7295,7 +8026,8 @@ section,
   border-radius: 8px;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 2px 4px color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0 2px 4px
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .pagination-2 li a.active {
@@ -7308,7 +8040,8 @@ section,
 .pagination-2 li a:hover:not(.active) {
   background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
   transform: translateY(-1px);
-  box-shadow: 0 3px 6px color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 3px 6px
+    color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .pagination-2 li a i {
@@ -7430,7 +8163,8 @@ section,
   flex-wrap: wrap;
   gap: 1rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .blog-details .article-content .content-header .author-info .author-details {
@@ -7439,20 +8173,37 @@ section,
   gap: 1rem;
 }
 
-.blog-details .article-content .content-header .author-info .author-details .author-img {
+.blog-details
+  .article-content
+  .content-header
+  .author-info
+  .author-details
+  .author-img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.blog-details .article-content .content-header .author-info .author-details .info h4 {
+.blog-details
+  .article-content
+  .content-header
+  .author-info
+  .author-details
+  .info
+  h4 {
   margin: 0;
   font-size: 1.1rem;
   color: var(--heading-color);
 }
 
-.blog-details .article-content .content-header .author-info .author-details .info .role {
+.blog-details
+  .article-content
+  .content-header
+  .author-info
+  .author-details
+  .info
+  .role {
   font-size: 0.9rem;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
@@ -7466,7 +8217,12 @@ section,
   margin-right: 0.3rem;
 }
 
-.blog-details .article-content .content-header .author-info .post-meta .divider {
+.blog-details
+  .article-content
+  .content-header
+  .author-info
+  .post-meta
+  .divider {
   margin: 0 0.75rem;
 }
 
@@ -7647,7 +8403,8 @@ section,
 .blog-details .article-content .meta-bottom {
   margin-top: 4rem;
   padding-top: 2rem;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
   display: grid;
   gap: 2rem;
 }
@@ -7715,7 +8472,8 @@ section,
   justify-content: space-between;
   margin-bottom: 40px;
   padding-bottom: 20px;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 92%);
 }
 
 .blog-comments .comments-header .title {
@@ -7763,7 +8521,11 @@ section,
   top: 80px;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, color-mix(in srgb, var(--accent-color), transparent 40%), color-mix(in srgb, var(--accent-color), transparent 90%));
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--accent-color), transparent 40%),
+    color-mix(in srgb, var(--accent-color), transparent 90%)
+  );
   z-index: 0;
 }
 
@@ -7828,7 +8590,7 @@ section,
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border: 2px solid var(--surface-color);
   z-index: 1;
 }
@@ -8071,8 +8833,14 @@ section,
   border-color: #dc3545;
 }
 
-.blog-comment-form .input-group input:invalid:not(:placeholder-shown)+.error-text,
-.blog-comment-form .input-group textarea:invalid:not(:placeholder-shown)+.error-text {
+.blog-comment-form
+  .input-group
+  input:invalid:not(:placeholder-shown)
+  + .error-text,
+.blog-comment-form
+  .input-group
+  textarea:invalid:not(:placeholder-shown)
+  + .error-text {
   opacity: 1;
   transform: translateY(0);
 }
@@ -8093,7 +8861,7 @@ section,
   transition: all 0.2s ease;
 }
 
-.blog-comment-form button[type=submit] {
+.blog-comment-form button[type="submit"] {
   background: var(--accent-color);
   color: var(--contrast-color);
   padding: 0.875rem 2.5rem;
@@ -8105,12 +8873,12 @@ section,
   transition: all 0.3s ease;
 }
 
-.blog-comment-form button[type=submit]:hover {
+.blog-comment-form button[type="submit"]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
   transform: translateY(-2px);
 }
 
-.blog-comment-form button[type=submit]:active {
+.blog-comment-form button[type="submit"]:active {
   transform: translateY(0);
 }
 
@@ -8123,7 +8891,7 @@ section,
     font-size: 1.5rem;
   }
 
-  .blog-comment-form button[type=submit] {
+  .blog-comment-form button[type="submit"] {
     width: 100%;
     padding: 0.875rem 1rem;
   }
@@ -8250,7 +9018,7 @@ section,
   top: 28px;
 }
 
-.contact-2 .contact-form-wrapper .form-group .input-with-icon textarea+i {
+.contact-2 .contact-form-wrapper .form-group .input-with-icon textarea + i {
   top: 25px;
   transform: none;
 }
@@ -8265,16 +9033,29 @@ section,
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
 }
 
-.contact-2 .contact-form-wrapper .form-group .input-with-icon .form-control:focus {
+.contact-2
+  .contact-form-wrapper
+  .form-group
+  .input-with-icon
+  .form-control:focus {
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--accent-color), transparent 90%);
+  box-shadow: 0 0 0 0.25rem
+    color-mix(in srgb, var(--accent-color), transparent 90%);
 }
 
-.contact-2 .contact-form-wrapper .form-group .input-with-icon .form-control::placeholder {
+.contact-2
+  .contact-form-wrapper
+  .form-group
+  .input-with-icon
+  .form-control::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 40%);
 }
 
-.contact-2 .contact-form-wrapper .form-group .input-with-icon textarea.form-control {
+.contact-2
+  .contact-form-wrapper
+  .form-group
+  .input-with-icon
+  textarea.form-control {
   height: 180px;
   resize: none;
   padding-top: 15px;
@@ -8290,18 +9071,21 @@ section,
   letter-spacing: 1px;
   border-radius: 8px;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px color-mix(in srgb, var(--accent-color), transparent 70%);
+  box-shadow: 0 5px 15px
+    color-mix(in srgb, var(--accent-color), transparent 70%);
 }
 
 .contact-2 .contact-form-wrapper .btn-submit:hover {
   background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-color), transparent 60%);
+  box-shadow: 0 8px 20px
+    color-mix(in srgb, var(--accent-color), transparent 60%);
 }
 
 .contact-2 .contact-form-wrapper .btn-submit:active {
   transform: translateY(0);
-  box-shadow: 0 3px 10px color-mix(in srgb, var(--accent-color), transparent 70%);
+  box-shadow: 0 3px 10px
+    color-mix(in srgb, var(--accent-color), transparent 70%);
 }
 
 .contact-2 .contact-form-wrapper .loading,
@@ -8503,7 +9287,11 @@ section,
   }
 }
 
-.terms-of-service .tos-content .content-section .prohibited-list .prohibited-item {
+.terms-of-service
+  .tos-content
+  .content-section
+  .prohibited-list
+  .prohibited-item {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -8512,12 +9300,22 @@ section,
   border-radius: 12px;
 }
 
-.terms-of-service .tos-content .content-section .prohibited-list .prohibited-item i {
+.terms-of-service
+  .tos-content
+  .content-section
+  .prohibited-list
+  .prohibited-item
+  i {
   color: #dc3545;
   font-size: 1.2rem;
 }
 
-.terms-of-service .tos-content .content-section .prohibited-list .prohibited-item span {
+.terms-of-service
+  .tos-content
+  .content-section
+  .prohibited-list
+  .prohibited-item
+  span {
   font-size: 0.95rem;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
@@ -8548,7 +9346,12 @@ section,
   font-size: 0.95rem;
 }
 
-.terms-of-service .tos-content .content-section .disclaimer-box ul li:last-child {
+.terms-of-service
+  .tos-content
+  .content-section
+  .disclaimer-box
+  ul
+  li:last-child {
   margin-bottom: 0;
 }
 
@@ -8585,7 +9388,11 @@ section,
 }
 
 .terms-of-service .tos-contact .contact-box {
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 95%) 0%, color-mix(in srgb, var(--accent-color), transparent 98%) 100%);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent-color), transparent 95%) 0%,
+    color-mix(in srgb, var(--accent-color), transparent 98%) 100%
+  );
   border-radius: 20px;
   padding: 40px;
   display: flex;
@@ -8643,7 +9450,11 @@ section,
   transition: all 0.3s;
 }
 
-.terms-of-service .tos-contact .contact-box .contact-content .contact-link:hover {
+.terms-of-service
+  .tos-contact
+  .contact-box
+  .contact-content
+  .contact-link:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -8745,7 +9556,11 @@ section,
 }
 
 .privacy .privacy-content .privacy-section .highlight-box {
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #000000 20%));
+  background: linear-gradient(
+    135deg,
+    var(--accent-color),
+    color-mix(in srgb, var(--accent-color), #000000 20%)
+  );
   padding: 40px;
   border-radius: 15px;
   text-align: center;
@@ -8783,7 +9598,11 @@ section,
   transition: all 0.3s ease;
 }
 
-.privacy .privacy-content .privacy-section .security-measures .measure-item:hover {
+.privacy
+  .privacy-content
+  .privacy-section
+  .security-measures
+  .measure-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -8859,28 +9678,61 @@ section,
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
-.privacy .privacy-content .privacy-section .cookie-types .table-responsive .table {
+.privacy
+  .privacy-content
+  .privacy-section
+  .cookie-types
+  .table-responsive
+  .table {
   margin: 0;
 }
 
-.privacy .privacy-content .privacy-section .cookie-types .table-responsive .table thead {
+.privacy
+  .privacy-content
+  .privacy-section
+  .cookie-types
+  .table-responsive
+  .table
+  thead {
   background: color-mix(in srgb, var(--accent-color), transparent 90%);
 }
 
-.privacy .privacy-content .privacy-section .cookie-types .table-responsive .table thead th {
+.privacy
+  .privacy-content
+  .privacy-section
+  .cookie-types
+  .table-responsive
+  .table
+  thead
+  th {
   border: none;
   color: var(--heading-color);
   font-weight: 600;
   padding: 15px 20px;
 }
 
-.privacy .privacy-content .privacy-section .cookie-types .table-responsive .table tbody td {
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+.privacy
+  .privacy-content
+  .privacy-section
+  .cookie-types
+  .table-responsive
+  .table
+  tbody
+  td {
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
   padding: 15px 20px;
   color: var(--default-color);
 }
 
-.privacy .privacy-content .privacy-section .cookie-types .table-responsive .table tbody tr:hover {
+.privacy
+  .privacy-content
+  .privacy-section
+  .cookie-types
+  .table-responsive
+  .table
+  tbody
+  tr:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 97%);
 }
 
@@ -8934,7 +9786,7 @@ section,
     font-size: 20px;
   }
 
-  .privacy .privacy-content .privacy-section .security-measures .row>div {
+  .privacy .privacy-content .privacy-section .security-measures .row > div {
     margin-bottom: 20px;
   }
 
@@ -8954,7 +9806,11 @@ section,
 --------------------------------------------------------------*/
 .error-404 {
   padding: 100px 0;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--background-color), transparent 0%), color-mix(in srgb, var(--background-color), var(--accent-color) 4%));
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--background-color), transparent 0%),
+    color-mix(in srgb, var(--background-color), var(--accent-color) 4%)
+  );
 }
 
 .error-404 .error-wrapper {
@@ -9030,7 +9886,11 @@ section,
   font-size: clamp(5rem, 10vw, 8rem);
   font-weight: 900;
   margin: 0;
-  background: linear-gradient(135deg, var(--heading-color), var(--accent-color));
+  background: linear-gradient(
+    135deg,
+    var(--heading-color),
+    var(--accent-color)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -9084,7 +9944,8 @@ section,
 .error-404 .error-actions .btn-home:hover {
   background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px color-mix(in srgb, var(--accent-color), transparent 70%);
+  box-shadow: 0 5px 15px
+    color-mix(in srgb, var(--accent-color), transparent 70%);
 }
 
 .error-404 .error-actions .btn-help {
@@ -9100,7 +9961,11 @@ section,
 
 .error-404 .error-suggestions {
   padding: 1.5rem;
-  background-color: color-mix(in srgb, var(--background-color), var(--accent-color) 5%);
+  background-color: color-mix(
+    in srgb,
+    var(--background-color),
+    var(--accent-color) 5%
+  );
   border-radius: 12px;
 }
 
@@ -9149,7 +10014,6 @@ section,
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0);
@@ -9161,7 +10025,6 @@ section,
 }
 
 @keyframes pulse {
-
   0%,
   100% {
     transform: scale(1);
@@ -9206,47 +10069,3 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-/* .starter-section {
-  /* Add your styles here */
-} */
-
-/* ===== LOGOUT BUTTON FIX ===== */
-/* .dropdown-menu .dropdown-logout .logout-btn {
-  background-color: transparent !important;
-  color: #dc3545 !important;
-  border: none !important;
-  width: 100%;
-  text-align: left;
-  padding: 10px 16px;
-  font-weight: 500;
-  border-radius: 6px;
-  transition: all 0.2s ease-in-out;
-}
-
-.dropdown-menu .dropdown-logout .logout-btn:hover {
-  background-color: #dc3545 !important;
-  color: #ffffff !important;
-}
-
-/* ===============================
-   FORCE LOGOUT BUTTON STYLE
-   =============================== */
-
-.dropdown-menu .dropdown-item.logout-btn {
-  color: #dc3545 !important;
-  background-color: transparent !important;
-  border: none !important;
-  width: 100%;
-  text-align: left;
-  padding: 10px 16px;
-  font-weight: 500;
-  border-radius: 6px;
-}
-
-/* IMPORTANT: override bootstrap hover */
-.dropdown-menu .dropdown-item.logout-btn:hover,
-.dropdown-menu .dropdown-item.logout-btn:focus,
-.dropdown-menu .dropdown-item.logout-btn:active {
-  color: #ffffff !important;
-  background-color: #dc3545 !important;
-}
