@@ -25,6 +25,7 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
     def create_seller(self, email, password=None, **extra_fields):
         """Create and save a customer user."""
+        extra_fields.setdefault("is_active", False)  # Sellers need admin approval
         extra_fields.setdefault("role", "seller")
         return self.create_user(email, password, **extra_fields)
 

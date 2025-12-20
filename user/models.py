@@ -42,12 +42,18 @@ class BuyerProfile(TimeStamp):
     phone = models.CharField(max_length=20, blank=True)
     interest_area = models.CharField(max_length=255, blank=True)
 
+    def __str__(self):
+        return f"BuyerProfile of {self.user.get_full_name() or self.user.email}"
+
 class SellerProfile(TimeStamp):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     phone = models.CharField(max_length=20)
     national_id = models.CharField(max_length=20)
     address = models.CharField(max_length=255)
     approved = models.BooleanField(default=False)  # Admin Approval
+
+    def __str__(self):
+        return f"SellerProfile of {self.user.get_full_name() or self.user.email}"
 class AgentProfile(TimeStamp):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     phone = models.CharField(max_length=20)

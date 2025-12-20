@@ -28,3 +28,153 @@
     color: var(--nav-dropdown-hover-color);
   }
 }
+/* Seller Signup Section */
+.seller-signup-section {
+  padding: 80px 0;
+}
+
+/* Card */
+.seller-signup-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Badge */
+.seller-badge {
+  background: #1f7f7c;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+}
+
+/* Alert */
+.seller-alert {
+  background: #f1fbfa;
+  color: #1f7f7c;
+  border-left: 4px solid #1f7f7c;
+  font-size: 14px;
+}
+
+/* Inputs */
+.custom-input {
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.custom-input:focus {
+  border-color: #1f7f7c;
+  box-shadow: 0 0 0 0.15rem rgba(31, 127, 124, 0.15);
+}
+
+/* Button */
+.seller-btn {
+  background: #1f7f7c;
+  color: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.seller-btn:hover {
+  background: #166663;
+  transform: translateY(-1px);
+}
+
+/* Right Image */
+.seller-image-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.seller-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .seller-image-card {
+    margin-top: 30px;
+  }
+}
+/* Seller Pending Section */
+.seller-pending-section {
+  padding: 90px 0;
+}
+
+/* Card */
+.seller-pending-card {
+  background: #ffffff;
+  padding: 45px;
+  border-radius: 18px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+}
+
+/* Badge */
+.pending-badge {
+  background: #f6c343;
+  color: #222;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Alert box */
+.pending-alert {
+  background: #fff8e1;
+  color: #8a6d3b;
+  padding: 14px 16px;
+  border-left: 4px solid #f6c343;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Steps list */
+.pending-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pending-steps li {
+  padding: 8px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Button */
+.pending-btn {
+  background: #1f7f7c;
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.pending-btn:hover {
+  background: #166663;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Image */
+.seller-pending-image {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.seller-pending-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

@@ -106,15 +106,13 @@
           </a>
           <ul>
             <li>
-              <a href="{% url 'core:property_detail' %}">Property Details</a>
+              <a href="{% url 'core:property_detail' %}">Dashboard</a>
             </li>
             <li>
-              <a href="{% url 'core:service_detail' %}">Service Details</a>
+              <a href="{% url 'core:service_detail' %}">My Profile</a>
             </li>
-            <li><a href="{% url 'core:agent_profile' %}">Agent Profile</a></li>
-            <li><a href="{% url 'core:blog_detail' %}">Blog Details</a></li>
-            <li><a href="{% url 'core:terms' %}">Terms</a></li>
-            <li><a href="{% url 'core:privacy_policy' %}">Privacy</a></li>
+            <li><a href="{% url 'core:agent_profile' %}">Saved Properties(Buyer)</a></li>
+            <li><a href="{% url 'core:blog_detail' %}">My Listing(Seller)</a></li>
             <li></li>
           </ul>
         </li>
@@ -137,7 +135,7 @@
     </form>
     {% else %}
 
-    <a class="btn-getstarted" href="{% url 'user:signup' %}">Sign Up</a>
+    <a class="btn-getstarted" href="{% url 'user:buyer_signup' %}">Sign Up</a>
     {% endif %}
   </div>
 </header>

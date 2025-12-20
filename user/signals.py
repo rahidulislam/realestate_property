@@ -18,29 +18,29 @@ def create_user_profile(sender, instance, created, **kwargs):
 
     user = instance
 
-    if user.user_type == 'buyer':
+    if user.role == 'buyer':
         BuyerProfile.objects.get_or_create(user=user)
         # mark verified by default for buyers (you may change this policy)
         if not user.is_verified:
             user.is_verified = True
             user.save(update_fields=['is_verified'])
 
-    elif user.user_type == 'seller':
+    elif user.role == 'seller':
         SellerProfile.objects.get_or_create(user=user)
         # keep seller unapproved by default (admin needs to approve)
         # notify admins about new seller request (optional)
-        try:
-            admin_emails = [a[1] for a in settings.ADMINS]
-        except Exception:
-            admin_emails = []
+        # try:
+        #     admin_emails = [a[1] for a in settings.ADMINS]
+        # except Exception:
+        #     admin_emails = []
 
-        if admin_emails:
-            subject = 'New Seller Registration Pending Approval'
-            message = f'A new seller registered: {user.get_full_name() or user.username}\n\n' \
-                      f'Email: {user.email}\nPlease review and approve in admin panel.'
-            send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, admin_emails, fail_silently=True)
+        # if admin_emails:
+        #     subject = 'New Seller Registration Pending Approval'
+        #     message = f'A new seller registered: {user.get_full_name() or user.username}\n\n' \
+        #               f'Email: {user.email}\nPlease review and approve in admin panel.'
+        #     send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, admin_emails, fail_silently=True)
 
-    elif user.user_type == 'agent':
+    elif user.role == 'agent':
         # Agents normally are created by admin; still we create profile if created
         AgentProfile.objects.get_or_create(user=user)
         # consider forcing is_verified True for admin created agents

@@ -1,0 +1,103 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<main class="main">
+  <!-- Seller Signup Section -->
+  <section class="section seller-signup-section">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <!-- Left: Form -->
+        <div class="col-lg-6" data-aos="fade-up">
+          <div class="seller-signup-card">
+            <span class="badge seller-badge mb-3"> Become a Seller </span>
+
+            <h2 class="mb-2">Register as a Seller</h2>
+            <p class="text-muted mb-4">
+              Create your seller account. All seller accounts require admin
+              approval before listing properties.
+            </p>
+
+            <!-- Info Alert -->
+            <div class="alert seller-alert mb-4">
+              ⏳ Your account will be reviewed by our admin team before
+              activation.
+            </div>
+
+            <form method="post" novalidate>
+              {% csrf_token %} 
+              {% if form.non_field_errors %}
+              <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+              {% endif %}
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  {{ form.first_name.label_tag }} 
+                  {{ form.first_name }} 
+                  {% for error in form.first_name.errors %}
+                  <div class="text-danger small">{{ error }}</div>
+                  {% endfor %}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  {{ form.last_name.label_tag }} {{ form.last_name }} {% for error in form.last_name.errors %}
+                  <div class="text-danger small">{{ error }}</div>
+                  {% endfor %}
+                </div>
+              </div>
+
+              <div class="mb-3">
+                {{ form.email.label_tag }} {{ form.email }} {% for error in form.email.errors %}
+                <div class="text-danger small">{{ error }}</div>
+                {% endfor %}
+              </div>
+
+              <div class="mb-3">
+                {{ form.phone.label_tag }} {{ form.phone }} {% for error in form.phone.errors %}
+                <div class="text-danger small">{{ error }}</div>
+                {% endfor %}
+              </div>
+
+              <div class="mb-3">
+                {{ form.national_id.label_tag }} {{ form.national_id }} {% for error in form.national_id.errors %}
+                <div class="text-danger small">{{ error }}</div>
+                {% endfor %}
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  {{ form.password1.label_tag }} {{ form.password1 }} {% for error in form.password1.errors %}
+                  <div class="text-danger small">{{ error }}</div>
+                  {% endfor %}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  {{ form.password2.label_tag }} {{ form.password2 }} {% for error in form.password2.errors %}
+                  <div class="text-danger small">{{ error }}</div>
+                  {% endfor %}
+                </div>
+              </div>
+
+              <button type="submit" class="btn seller-btn w-100 mt-3">
+                Register as Seller
+              </button>
+            </form>
+
+            <p class="text-center small mt-4">
+              Already have an account?
+              <a href="{% url 'user:login' %}">Login</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: Image -->
+        <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
+          <div class="seller-image-card">
+            <img
+              src="{% static 'img/real-estate/property-exterior-1.webp' %}"
+              alt="Seller Property"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
