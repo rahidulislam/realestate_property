@@ -1,67 +1,68 @@
-{% comment %} <div class="sidebar">
-
+{% comment %}
+<div class="sidebar">
   {% if request.user.role == "seller" %}
-    <h5 class="mb-4">Seller Panel</h5>
-    <a href="/seller/dashboard/" class="active">Dashboard</a>
-    <a href="/seller/add-property/">Add Property</a>
-    <a href="/seller/manage-properties/">Manage Properties</a>
-    <a href="/seller/earnings/">Earnings</a>
-    <a href="/logout/">Logout</a>
+  <h5 class="mb-4">Seller Panel</h5>
+  <a href="/seller/dashboard/" class="active">Dashboard</a>
+  <a href="/seller/add-property/">Add Property</a>
+  <a href="/seller/manage-properties/">Manage Properties</a>
+  <a href="/seller/earnings/">Earnings</a>
+  <a href="/logout/">Logout</a>
 
   {% elif request.user.role == "agent" %}
-    <h5 class="mb-4">Agent Panel</h5>
-    <a href="/agent/dashboard/" class="active">Dashboard</a>
-    <a href="/agent/assigned-properties/">Assigned Properties</a>
-    <a href="/agent/clients/">Clients</a>
-    <a href="/agent/commissions/">Commissions</a>
-    <a href="/logout/">Logout</a>
+  <h5 class="mb-4">Agent Panel</h5>
+  <a href="/agent/dashboard/" class="active">Dashboard</a>
+  <a href="/agent/assigned-properties/">Assigned Properties</a>
+  <a href="/agent/clients/">Clients</a>
+  <a href="/agent/commissions/">Commissions</a>
+  <a href="/logout/">Logout</a>
 
   {% else %}
-    <h5 class="mb-4">Buyer Panel</h5>
-    <a href="/buyer/dashboard/" class="active">Dashboard</a>
-    <a href="/buyer/saved-properties/">Saved Properties</a>
-    <a href="/buyer/appointments/">Appointments</a>
-    <a href="/buyer/my-requests/">My Requests</a>
-    <a href="/logout/">Logout</a>
+  <h5 class="mb-4">Buyer Panel</h5>
+  <a href="/buyer/dashboard/" class="active">Dashboard</a>
+  <a href="/buyer/saved-properties/">Saved Properties</a>
+  <a href="/buyer/appointments/">Appointments</a>
+  <a href="/buyer/my-requests/">My Requests</a>
+  <a href="/logout/">Logout</a>
   {% endif %}
-
-</div> {% endcomment %}
-<div id="sidebar" class="sidebar">
-
-    <div class="sidebar-header p-3">
-        <h5 class="text-white">{{ request.user.role|title }} Panel</h5>
-    </div>
-
-    <ul class="nav flex-column px-2">
-
-        <li class="nav-item">
-            <a class="nav-link {% if request.path == '/buyer/dashboard/' %}active{% endif %}" 
-               {% comment %} href="{% url request.user.role|add:':dashboard' %}"> {% endcomment %}
-                Dashboard
-            </a>
-        </li>
-
-        {% if request.user.role == 'buyer' %}
-            <li class="nav-item"><a class="nav-link" href="#">Saved Properties</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Appointments</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">My Requests</a></li>
-
-        {% elif request.user.role == 'seller' %}
-            <li class="nav-item"><a class="nav-link" href="#">My Listings</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Add Property</a></li>
-
-        {% elif request.user.role == 'agent' %}
-            <li class="nav-item"><a class="nav-link" href="#">Leads</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Appointments</a></li>
-        {% endif %}
-
-        <li class="nav-item mt-3">
-            <a class="nav-link text-danger" href="">
-                {% comment %} {% url 'logout' %} {% endcomment %}
-                Logout
-            </a>
-        </li>
-    </ul>
-
 </div>
+{% endcomment %}
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-header p-3">
+    <h5 class="text-white">{{ request.user.role|title }} Panel</h5>
+  </div>
 
+  <ul class="nav flex-column px-2">
+    <li class="nav-item">
+      <a
+        class="nav-link {% if request.path == '/buyer/dashboard/' %}active{% endif %}"
+        {% comment %}
+        href="{% url request.user.role|add:':dashboard' %}"
+      >
+        {% endcomment %} Dashboard
+      </a>
+    </li>
+
+    {% if request.user.role == 'buyer' %}
+    <li class="nav-item"><a class="nav-link" href="#">Saved Properties</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Appointments</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">My Requests</a></li>
+
+    {% elif request.user.role == 'seller' %}
+    <li class="nav-item"><a class="nav-link" href="#">My Listings</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Add Property</a></li>
+
+    {% elif request.user.role == 'agent' %}
+    <li class="nav-item"><a class="nav-link" href="#">Leads</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Appointments</a></li>
+    {% endif %}
+
+    <li class="nav-item mt-3">
+        {% if request.user.is_authenticated %}
+      <form method="post" action="{% url 'user:logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="nav-link text-danger w-100">Sign Out</button>
+      </form>
+        {% endif %}
+    </li>
+  </ul>
+</div>

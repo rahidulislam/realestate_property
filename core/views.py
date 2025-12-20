@@ -1,5 +1,9 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
+from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView
+
+from user.decorators import seller_required
 
 
 # Create your views here.
@@ -93,20 +97,24 @@ class BlogDetailView(TemplateView):
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
 
+
+@method_decorator([login_required, seller_required], name="dispatch")
 class SellerDashboardView(TemplateView):
     template_name = "dashboard/seller/seller_dashboard.html"
-    
+
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
-    
+
+
 class AgentDashboardView(TemplateView):
     template_name = "core/agent_dashboard.html"
-    
+
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
-    
+
+
 class BuyerDashboardView(TemplateView):
     template_name = "core/buyer_dashboard.html"
-    
+
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)

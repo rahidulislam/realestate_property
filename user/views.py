@@ -54,7 +54,6 @@ class SigninView(LoginView):
             return reverse_lazy("core:agent_dashboard")
         else:
             return super().get_success_url()
-        return super().get_success_url()
 
     def form_invalid(self, form):
         email = form.data.get("username")
