@@ -1,10 +1,8 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.forms import ValidationError
 from realestate_property.base_model import TimeStamp
 from .managers import CustomUserManager
-
-
-
 
 
 
@@ -59,3 +57,34 @@ class AgentProfile(TimeStamp):
     phone = models.CharField(max_length=20)
     assigned_area = models.CharField(max_length=255)
     agency_name = models.CharField(max_length=255, blank=True)
+
+class AgentApplication(TimeStamp):
+    class ApplicationStatus(models.TextChoices):
+        PENDING = "pending", "Pending"
+        APPROVED = "approved", "Approved"
+        REJECTED = "rejected", "Rejected"
+
+    approved_user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, blank=True, null=True, related_name="agent_applications")
+    full_name = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
+    phone = models.CharField(max_length=20)
+    license_number = models.CharField(max_length=50)
+    national_id = models.CharField(max_length=30)
+    nid_document = models.FileField(upload_to="agent_applications/nid_documents/")
+    license_document = models.FileField(upload_to="agent_applications/license_documents/")
+    experience_years = models.PositiveIntegerField()
+    company_name = models.CharField(max_length=100, blank=True)
+    message = models.TextField(blank=True)
+
+    status = models.CharField(
+        max_length=20,
+        choices=ApplicationStatus.choices,
+        default=ApplicationStatus.PENDING,
+    )
+
+    approved_at = models.DateTimeField(blank=True, null=True)
+
+    def __str__(self):
+        return f"AgentApplication({self.full_name}, {self.email}, {self.status})"
+    
+            

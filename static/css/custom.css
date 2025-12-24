@@ -178,3 +178,125 @@
   height: 100%;
   object-fit: cover;
 }
+/* Agent Application Section */
+
+.agent-apply-section {
+  padding: 80px 0;
+}
+
+.agent-apply-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 40px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+
+.agent-badge {
+  background: #1f7a74;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.agent-alert {
+  background: #f1fbfa;
+  border-left: 4px solid #1f7a74;
+  color: #155e59;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.custom-input {
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid #e3e8ee;
+  padding: 10px 14px;
+}
+
+.custom-input:focus {
+  border-color: #1f7a74;
+  box-shadow: 0 0 0 0.15rem rgba(31,122,116,.15);
+}
+
+.agent-btn {
+  background: #1f7a74;
+  color: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+}
+
+.agent-btn:hover {
+  background: #176963;
+  color: #fff;
+}
+
+.agent-image-card img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+}
+
+/* Agent Application Success Section */
+.agent-success-section {
+  padding: 100px 0;
+}
+
+.agent-success-card {
+  background: #ffffff;
+  padding: 50px 45px;
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: #1f7a74;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.success-alert {
+  background: #f1fbfa;
+  border-left: 4px solid #1f7a74;
+  color: #155e59;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.success-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.success-steps li {
+  padding: 6px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.success-btn {
+  background: #1f7a74;
+  color: #fff;
+  padding: 12px 36px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.success-btn:hover {
+  background: #176963;
+  color: #fff;
+  transform: translateY(-1px);
+}

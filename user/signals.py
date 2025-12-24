@@ -40,10 +40,10 @@ def create_user_profile(sender, instance, created, **kwargs):
         #               f'Email: {user.email}\nPlease review and approve in admin panel.'
         #     send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, admin_emails, fail_silently=True)
 
-    elif user.role == 'agent':
-        # Agents normally are created by admin; still we create profile if created
-        AgentProfile.objects.get_or_create(user=user)
-        # consider forcing is_verified True for admin created agents
-        if not user.is_verified:
-            user.is_verified = True
-            user.save(update_fields=['is_verified'])
+    # elif user.role == 'agent':
+    #     # Agents normally are created by admin; still we create profile if created
+    #     AgentProfile.objects.get_or_create(user=user)
+    #     # consider forcing is_verified True for admin created agents
+    #     if not user.is_verified:
+    #         user.is_verified = True
+    #         user.save(update_fields=['is_verified'])

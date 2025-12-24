@@ -7,7 +7,7 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import FormView, TemplateView
 
-from .forms import CustomAuthenticationForm, CustomUserCreationForm, SellerSignupForm
+from .forms import CustomAuthenticationForm, CustomUserCreationForm, SellerSignupForm, AgentApplicationForm
 from .models import CustomUser
 
 
@@ -36,6 +36,20 @@ class SellerSignUpView(FormView):
 
 class SellerPendingView(TemplateView):
     template_name = "user/seller_pending.html"
+
+class AgentApplicationAplyView(FormView):
+    template_name = "user/agent_application_apply.html"
+    form_class = AgentApplicationForm
+    success_url = reverse_lazy("user:agent_application_success")
+
+    def form_valid(self, form):
+        form.save()
+        messages.success(self.request, "Your agent application has been submitted.")
+        return super().form_valid(form)
+    
+class AgentApplicationSuccessView(TemplateView):
+    template_name = "user/agent_application_success.html"
+    
 
 
 class SigninView(LoginView):
@@ -73,3 +87,5 @@ class SignoutView(LogoutView):
     def dispatch(self, request, *args, **kwargs):
         messages.success(request, "You have been signed out.")
         return super().dispatch(request, *args, **kwargs)
+    
+

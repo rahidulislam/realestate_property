@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django import forms
 
-from .models import CustomUser
+from .models import CustomUser, AgentApplication
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -52,15 +52,16 @@ class SellerSignupForm(UserCreationForm):
 
     class Meta:
         model = CustomUser
-        fields = ["email", "first_name", "last_name","password1","password2"] + ["phone", "national_id"]
+        fields = ["email", "first_name", "last_name", "password1", "password2"] + [
+            "phone",
+            "national_id",
+        ]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        
+
         for field in self.fields.values():
-            field.widget.attrs.update({
-                "class": "form-control custom-input"
-            })
+            field.widget.attrs.update({"class": "form-control custom-input"})
 
     def save(self, commit=True):
         email = self.cleaned_data["email"]
@@ -75,7 +76,6 @@ class SellerSignupForm(UserCreationForm):
             last_name=last_name,
         )
         if commit:
-            
             user.sellerprofile.phone = self.cleaned_data["phone"]
             user.sellerprofile.national_id = self.cleaned_data["national_id"]
             user.sellerprofile.save()
@@ -85,7 +85,7 @@ class SellerSignupForm(UserCreationForm):
             #     company_name=self.cleaned_data.get("company_name", ""),
             # )
         return user
-    
+
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
         password2 = self.cleaned_data.get("password2")
@@ -94,6 +94,37 @@ class SellerSignupForm(UserCreationForm):
         return password2
 
 
+class AgentApplicationForm(forms.ModelForm):
+    class Meta:
+        model = AgentApplication
+        fields = (
+            "full_name",
+            "email",
+            "phone",
+            "license_number",
+            "national_id",
+            "nid_document",
+            "license_document",
+            "experience_years",
+            "company_name",
+            "message",
+        )
+        widgets = {
+            "message": forms.Textarea(
+                attrs={
+                    "rows": 4,
+                    "class": "form-control custom-input",
+                    "placeholder": "Write your message here...",
+                }
+            ),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        for name, field in self.fields.items():
+            if name != "message":
+                field.widget.attrs.update({"class": "form-control custom-input", "placeholder": f"Enter your {field.label}"})
 
 
 class CustomAuthenticationForm(AuthenticationForm):

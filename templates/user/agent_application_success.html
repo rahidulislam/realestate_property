@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<main class="main">
+
+  <section class="section agent-success-section">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+
+        <div class="col-lg-7">
+          <div class="agent-success-card text-center">
+
+            <div class="success-icon mb-4">
+              ✓
+            </div>
+
+            <h2 class="mb-3">Application Submitted Successfully</h2>
+
+            <p class="text-muted mb-4">
+              Thank you for applying to become a real estate agent.
+              Your application has been received and is currently under review.
+            </p>
+
+            <div class="success-alert mb-4">
+              🔍 Our admin team will carefully verify your information.  
+              If approved, you will receive an email with instructions to set your password.
+            </div>
+
+            <ul class="success-steps mb-4">
+              <li>✔ Application received</li>
+              <li>⏳ Verification in progress</li>
+              <li>📧 Email notification after approval</li>
+            </ul>
+
+            <a href="{% url 'core:home' %}" class="btn success-btn">
+              Back to Home
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+{% endblock %}

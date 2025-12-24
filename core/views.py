@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.utils.decorators import method_decorator
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, FormView
 
 from user.decorators import seller_required
 
@@ -118,3 +118,5 @@ class BuyerDashboardView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
+    
+

@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<main class="main">
+
+  <section class="section agent-apply-section">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+
+        <!-- Form -->
+        <div class="col-lg-6">
+          <div class="agent-apply-card">
+
+            <span class="badge agent-badge mb-3">
+              Become an Agent
+            </span>
+
+            <h2 class="mb-2">Apply as a Real Estate Agent</h2>
+            <p class="text-muted mb-4">
+              Submit your application to become a verified agent.
+              Our admin team will review your information carefully.
+            </p>
+
+            <div class="alert agent-alert mb-4">
+              🛂 This is an application, not an instant account.
+              Approved agents will receive login instructions via email.
+            </div>
+
+            <form method="post" enctype="multipart/form-data" novalidate>
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                    <div class="alert alert-danger">
+                    {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+
+                <div class="mb-3">
+                    {{ form.full_name.label_tag }}
+                    {{ form.full_name }}
+                    {% for error in form.full_name.errors %}
+                    <div class="text-danger small">{{ error }}</div>
+                    {% endfor %}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                    {% for error in form.email.errors %}
+                    <div class="text-danger small">{{ error }}</div>
+                    {% endfor %}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.phone.label_tag }}
+                    {{ form.phone }}
+                    {% for error in form.phone.errors %}
+                    <div class="text-danger small">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="mb-3">
+                    {{ form.experience_years.label_tag }}
+                    {{ form.experience_years }}
+                    {% for error in form.experience_years.errors %}
+                    <div class="text-danger small">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="mb-3">
+                    {{ form.company_name.label_tag }}
+                    {{ form.company_name }}
+                    {% for error in form.company_name.errors %}
+                    <div class="text-danger small">{{ error }}</div>
+                    {% endfor %}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.national_id.label_tag }}
+                    {{ form.national_id }}
+                    {% for error in form.national_id.errors %}
+                    <div class="text-danger small">{{ error }}</div>
+                    {% endfor %}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.nid_document.label_tag }}
+                    {{ form.nid_document }}
+                    {% for error in form.nid_document.errors %}
+                    <div class="text-danger small">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="mb-3">
+                    {{ form.license_number.label_tag }}
+                    {{ form.license_number }}
+                    {% for error in form.license_number.errors %}
+                    <div class="text-danger small">{{ error }}</div>
+                    {% endfor %}
+                </div>
+
+                <div class="mb-4">
+                    {{ form.license_document.label_tag }}
+                    {{ form.license_document }}
+                    {% for error in form.license_document.errors %}
+                    <div class="text-danger small">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="mb-4">
+                    {{ form.message.label_tag }}
+                    {{ form.message }}
+                    {% for error in form.message.errors %}
+                    <div class="text-danger small">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <button type="submit" class="btn agent-btn w-100">
+                    Submit Application
+                </button>
+            </form>
+
+
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="col-lg-5 d-none d-lg-block">
+          <div class="agent-image-card">
+            <img src="{% static 'img/person/person-m-7.webp' %}" alt="Agent">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+{% endblock %}

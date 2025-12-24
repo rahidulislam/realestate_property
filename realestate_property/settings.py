@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -137,3 +140,15 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "user.CustomUser"
 LOGIN_REDIRECT_URL = "core:home"
 LOGIN_URL = "user:login"
+
+# Email backend settings
+# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.getenv("MAIL_SERVER")
+EMAIL_HOST_USER = os.getenv("MAIL_USERNAME")
+EMAIL_HOST_PASSWORD = os.getenv("MAIL_PASSWORD")
+EMAIL_PORT = int(os.getenv("MAIL_PORT"))
+EMAIL_HOST = os.getenv("MAIL_SERVER")
+DEFAULT_FROM_EMAIL = os.getenv("MAIL_FROM")
+EMAIL_USE_TLS = True
+EMAIL_DEBUG = True
